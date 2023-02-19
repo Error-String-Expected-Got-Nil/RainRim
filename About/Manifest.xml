@@ -2,6 +2,6 @@
 <Manifest>
 	<identifier>RainRim</identifier>
 	<version>0.1.0.0</version>
-	<manifestUri>https://github.com/Error-String-Expected-Got-Nil/RainRim/blob/main/About/Manifest.xml</manifestUri>
+	<manifestUri>https://raw.githubusercontent.com/Error-String-Expected-Got-Nil/RainRim/main/About/Manifest.xml</manifestUri>
 	<downloadUri>https://github.com/Error-String-Expected-Got-Nil/RainRim</downloadUri>
 </Manifest>
