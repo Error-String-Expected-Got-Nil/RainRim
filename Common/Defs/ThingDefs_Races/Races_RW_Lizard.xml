@@ -45,15 +45,15 @@
 			<maxPreyBodySize>1.5</maxPreyBodySize>
 			<baseBodySize>1.5</baseBodySize>
 			<baseHealthScale>1.25</baseHealthScale>
-			<baseHungerRate>0.5</baseHungerRate>
+			<baseHungerRate>0.3</baseHungerRate>
 			<foodType>CarnivoreAnimal</foodType>
 			<manhunterOnTameFailChance>0.10</manhunterOnTameFailChance>
 			<manhunterOnDamageChance>0.50</manhunterOnDamageChance>
 			<leatherDef>RW_Leather_GiantLizard</leatherDef>
-			<wildness>0.5</wildness>
+			<wildness>0.75</wildness>
 			<meatLabel>giant lizard meat</meatLabel>
 			<trainability>Intermediate</trainability>
-			<lifeExpectancy>30</lifeExpectancy>
+			<lifeExpectancy>20</lifeExpectancy>
 			<lifeStageAges>
 				<li>
 					<def>AnimalBaby</def>
@@ -79,6 +79,6 @@
 	
 	<PawnKindDef ParentName="AnimalKindBase" Name="RWAnimalKindBaseLizard" Abstract="True">
 		<ecoSystemWeight>0.5</ecoSystemWeight>
-		<combatPower>80</combatPower>
+		<combatPower>115</combatPower>
 	</PawnKindDef>
 </Defs>

@@ -50,11 +50,11 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_PinkLizard</texPath>
-					<drawSize>1</drawSize>
+					<drawSize>1.1</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_Dessicated_PinkLizard</texPath>
-					<drawSize>1</drawSize>
+					<drawSize>1.1</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 			<li>
