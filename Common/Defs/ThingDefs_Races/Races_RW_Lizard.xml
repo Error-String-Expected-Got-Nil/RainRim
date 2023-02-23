@@ -2,7 +2,7 @@
 <Defs>
 	<ThingDef Name="ThingBaseRWLizard" ParentName="AnimalThingBase" Abstract="True">
 		<statBases>
-			<MoveSpeed>4.00</MoveSpeed>
+			<MoveSpeed>4.50</MoveSpeed>
 			<ComfyTemperatureMin>0</ComfyTemperatureMin>
 			<MarketValue>350</MarketValue>
 			<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
