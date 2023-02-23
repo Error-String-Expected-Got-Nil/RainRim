@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-	<PawnKindDef ParentName="AnimalKindBase">
+	<ThingDef ParentName="ThingBaseRWLizard">
+		<defName>RW_PinkLizard</defName>
+		<label>pink lizard</label>
+		<description>One of many species of giant reptile now prowling the rim. Pink Lizards are generally regarded as the most average of giant lizard species, and have no unique traits compared to other lizards.</description>
+		<comps>
+			<li Class="CompProperties_EggLayer">
+				<eggFertilizedDef>RW_PinkLizardEggFertilized</eggFertilizedDef>
+				<eggFertilizationCountMax>1</eggFertilizationCountMax>
+				<eggLayIntervalDays>5</eggLayIntervalDays>
+				<eggProgressUnfertilizedMax>0.5</eggProgressUnfertilizedMax>
+				<eggCountRange>1</eggCountRange>
+			</li>
+		</comps>
+		
+		<race>
+			<wildBiomes>
+				<BorealForest>0.05</BorealForest>
+				<TemperateSwamp>0.10</TemperateSwamp>
+				<TropicalSwamp>0.10</TropicalSwamp>
+				<TemperateForest>0.15</TemperateForest>
+				<TropicalRainforest>0.175</TropicalRainforest>
+				<AridShrubland>0.175</AridShrubland>
+			</wildBiomes>
+		</race>
+	</ThingDef>
+	
+	<PawnKindDef ParentName="RWAnimalKindBaseLizard">
 		<defName>RW_PinkLizard</defName>
 		<race>RW_PinkLizard</race>
 		<label>pink lizard</label>
