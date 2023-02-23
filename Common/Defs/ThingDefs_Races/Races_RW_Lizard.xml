@@ -79,6 +79,7 @@
 	
 	<PawnKindDef ParentName="AnimalKindBase" Name="RWAnimalKindBaseLizard" Abstract="True">
 		<ecoSystemWeight>0.5</ecoSystemWeight>
+		<combatPower>80</combatPower>
 	</PawnKindDef>
 	
 	
@@ -108,59 +109,4 @@
 			</wildBiomes>
 		</race>
 	</ThingDef>
-	
-	<PawnKindDef ParentName="AnimalKindBase">
-		<defName>RW_PinkLizard</defName>
-		<race>RW_PinkLizard</race>
-		<label>pink lizard</label>
-		<combatPower>80</combatPower>
-		<alternateGraphicChance>1</alternateGraphicChance>
-		<canArriveManhunter>false</canArriveManhunter>
-		<alternateGraphics>
-			<li>
-				<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_PinkLizard</texPath>
-			</li>
-			<li>
-				<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_PinkLizard2</texPath>
-			</li>
-			<li>
-				<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_PinkLizard3</texPath>
-			</li>
-			<li>
-				<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_PinkLizard4</texPath>
-			</li>
-		</alternateGraphics>
-		<lifeStages>
-			<li>
-				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_PinkLizard</texPath>
-					<drawSize>1</drawSize>
-				</bodyGraphicData>
-				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_Dessicated_PinkLizard</texPath>
-					<drawSize>1</drawSize>
-				</dessicatedBodyGraphicData>
-			</li>
-			<li>
-				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_PinkLizard</texPath>
-					<drawSize>2</drawSize>
-				</bodyGraphicData>
-				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_Dessicated_PinkLizard</texPath>
-					<drawSize>2</drawSize>
-				</dessicatedBodyGraphicData>
-			</li>
-			<li>
-				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_PinkLizard</texPath>
-					<drawSize>3</drawSize>
-				</bodyGraphicData>
-				<dessicatedBodyGraphicData>
-					<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_Dessicated_PinkLizard</texPath>
-					<drawSize>3</drawSize>
-				</dessicatedBodyGraphicData>
-			</li>
-		</lifeStages>
-	</PawnKindDef>
 </Defs>
