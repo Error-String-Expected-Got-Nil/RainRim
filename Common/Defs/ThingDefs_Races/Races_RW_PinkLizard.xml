@@ -16,12 +16,11 @@
 		
 		<race>
 			<wildBiomes>
-				<BorealForest>0.05</BorealForest>
-				<TemperateSwamp>0.10</TemperateSwamp>
-				<TropicalSwamp>0.10</TropicalSwamp>
-				<TemperateForest>0.15</TemperateForest>
-				<TropicalRainforest>0.175</TropicalRainforest>
-				<AridShrubland>0.175</AridShrubland>
+				<TemperateSwamp>0.05</TemperateSwamp>
+				<TropicalSwamp>0.05</TropicalSwamp>
+				<TemperateForest>0.10</TemperateForest>
+				<TropicalRainforest>0.15</TropicalRainforest>
+				<AridShrubland>0.15</AridShrubland>
 			</wildBiomes>
 		</race>
 	</ThingDef>
