@@ -29,8 +29,9 @@
 		<defName>RW_PinkLizard</defName>
 		<race>RW_PinkLizard</race>
 		<label>pink lizard</label>
-		<alternateGraphicChance>1</alternateGraphicChance>
+		
 		<canArriveManhunter>false</canArriveManhunter>
+		<alternateGraphicChance>1</alternateGraphicChance>
 		<alternateGraphics>
 			<li>
 				<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_PinkLizard</texPath>
@@ -69,11 +70,11 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_PinkLizard</texPath>
-					<drawSize>3</drawSize>
+					<drawSize>2.8</drawSize>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/RW_PinkLizard/RW_Dessicated_PinkLizard</texPath>
-					<drawSize>3</drawSize>
+					<drawSize>2.8</drawSize>
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>
