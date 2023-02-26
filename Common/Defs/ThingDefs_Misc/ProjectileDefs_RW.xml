@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="BaseBullet">
+		<defName>RW_LizardTongue</defName>
+		<label>tongue grab</label>
+		<thingClass>RainRim.LizardTongueProjectile</thingClass>
+		<graphicData>
+			<texPath>Things/Projectiles/RW_LizardTongue</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.4</drawSize>
+		</graphicData>
+		<projectile>
+			<flyOverhead>false</flyOverhead>
+			<damageAmountBase>0</damageAmountBase>
+			<damageDef>Stun</damageDef>
+			<speed>50</speed>
+		</projectile>
+	</ThingDef>
+</Defs>

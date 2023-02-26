@@ -13,6 +13,24 @@
 				<eggProgressUnfertilizedMax>0.5</eggProgressUnfertilizedMax>
 				<eggCountRange>1</eggCountRange>
 			</li>
+			
+			<li Class="MVCF.Comps.CompProperties_VerbProps">
+				<compClass>MVCF.Comps.Comp_VerbProps</compClass>
+				<verbProps>
+					<li>
+						<label>tongue</label>
+						<description>The lizard uses its long tongue to grab the target and quickly pull them to its location. If the target is larger than the lizard, the grab will fail.</description>
+						<canBeToggled>true</canBeToggled>
+						<separateToggle>false</separateToggle>
+						<comps>
+							<li Class="MVCF.VerbComps.VerbCompProperties_Cooldown">
+								<compClass>MVCF.VerbComps.VerbComp_Cooldown</compClass>
+								<cooldownTime>6.5</cooldownTime> <!-- Actual verb cooldown -->
+							</li>
+						</comps>
+					</li>
+				</verbProps>
+			</li>
 		</comps>
 		
 		<race>
@@ -68,6 +86,32 @@
 				<chanceFactor>0.2</chanceFactor>
 			</li>
 		</tools>
+		
+		<verbs>
+			<li>
+				<verbClass>Verb_Shoot</verbClass>
+				
+				<accuracyTouch>1</accuracyTouch>
+				<accuracyShort>1</accuracyShort>
+				<accuracyMedium>1</accuracyMedium>
+				<accuracyLong>1</accuracyLong>
+				
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>RW_LizardTongue</defaultProjectile>
+				
+				<warmupTime>0.25</warmupTime>
+				<defaultCooldownTime>0.5</defaultCooldownTime> <!-- Note: Not the actual verb cooldown, this is the stun after using the verb -->
+				
+				<burstShotCount>1</burstShotCount>
+				<minRange>1.5</minRange>
+				<range>6</range>
+				
+				<soundCast>RW_LizardSpit</soundCast>
+				<muzzleFlashScale>0</muzzleFlashScale>
+				<label>tongue</label>
+				<commonality>.8</commonality>
+			</li>
+		</verbs>
 	</ThingDef>
 	
 	<PawnKindDef ParentName="RWAnimalKindBaseLizard">

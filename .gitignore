@@ -1,7 +1,5 @@
-
 Source/RainRim/Properties/AssemblyInfo.cs
-Source/RainRim/obj/Debug/RainRim.csproj.AssemblyReference.cache
-Source/RainRim/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-Source/RainRim/obj/Debug/.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+Source/RainRim/obj
+Source/RainRim/bin
 Source/RainRim/.vs/RainRim/v16/.suo
 *.cache
