@@ -14,8 +14,9 @@ namespace RainRim
             return true;
         }
 
-        // this gets the space adjacent to the lizard that's between it and the target
-        // pulling the target to the lizard's space is fine, but this looks much nicer
+        /// <summary>
+        /// Gets the space adjacent to the origin that's between the origin and the target.
+        /// </summary>
         public static IntVec3 GetDesitinationPosition(IntVec3 origin, IntVec3 target, Map map)
         {
             Vector3 relativePosition = (target - origin).ToVector3();
