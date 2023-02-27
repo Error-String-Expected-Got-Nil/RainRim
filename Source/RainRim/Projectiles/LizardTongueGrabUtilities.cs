@@ -23,7 +23,7 @@ namespace RainRim
             IntVec3 roundedRelativePosition = new IntVec3((int)Mathf.Round(relativePosition.x), 0, (int)Mathf.Round(relativePosition.z));
             IntVec3 candidatePosition = origin + roundedRelativePosition;
 
-            // while an adjacent space between the lizard and target is PROBABLY fine, there's no guarantee, so we need to check here
+            // while an adjacent space between the lizard and target is probably open, there's no guarantee, so we need to check here
             if (!IsValidPositionTarget(map, candidatePosition))
                 // given the lizard is already standing there, its spot will always be safe, so we can use it as a fallback
                 return origin;
