@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Projectiles\LizardTongueGrabFlyer.cs" />
+    <Compile Include="Projectiles\LizardTongueGrabUtilities.cs" />
     <Compile Include="Projectiles\LizardTongueProjectile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RW_ThingDefOf.cs" />
