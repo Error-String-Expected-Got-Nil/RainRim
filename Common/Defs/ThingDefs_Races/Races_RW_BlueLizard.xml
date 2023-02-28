@@ -109,7 +109,6 @@
 				<soundCast>RW_LizardSpit</soundCast>
 				<muzzleFlashScale>0</muzzleFlashScale>
 				<label>tongue</label>
-				<commonality>.8</commonality>
 			</li>
 		</verbs>
 	</ThingDef>
