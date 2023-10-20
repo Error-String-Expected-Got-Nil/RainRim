@@ -2,31 +2,33 @@
 using Verse;
 using RimWorld;
 
-namespace RainRim
+namespace RainRim.Projectiles
 {
     public static class LizardTongueGrabUtilities
     {
-        // possibly excessive, but I may want to add extra conditions for if the grab should succeed in the future, so I'm putting it in a method
+        // Possibly excessive, but I may want to add extra conditions for if the grab should succeed in the future,
+        // so I'm putting it in a method
         public static bool ShouldGrabTarget(Pawn lizard, Pawn target)
         {
-            if (lizard.BodySize < target.BodySize)
-                return false;
+            if (lizard.BodySize < target.BodySize) return false;
             return true;
         }
 
         /// <summary>
         /// Gets the space adjacent to the origin that's between the origin and the target.
         /// </summary>
-        public static IntVec3 GetDesitinationPosition(IntVec3 origin, IntVec3 target, Map map)
+        public static IntVec3 GetDestinationPosition(IntVec3 origin, IntVec3 target, Map map)
         {
-            Vector3 relativePosition = (target - origin).ToVector3();
+            var relativePosition = (target - origin).ToVector3();
             relativePosition.Normalize();
-            IntVec3 roundedRelativePosition = new IntVec3((int)Mathf.Round(relativePosition.x), 0, (int)Mathf.Round(relativePosition.z));
-            IntVec3 candidatePosition = origin + roundedRelativePosition;
+            var roundedRelativePosition = new IntVec3((int)Mathf.Round(relativePosition.x), 0, (int)Mathf.Round(relativePosition.z));
+            var candidatePosition = origin + roundedRelativePosition;
 
-            // while an adjacent space between the lizard and target is probably open, there's no guarantee, so we need to check here
+            // While an adjacent space between the lizard and target is probably open, there's no guarantee, so we
+            // need to check here.
             if (!IsValidPositionTarget(map, candidatePosition))
-                // given the lizard is already standing there, its spot will always be safe, so we can use it as a fallback
+                // Given the lizard is already standing there, its spot will always be safe, so we can use it as a
+                // fallback.
                 return origin;
             return candidatePosition;
         }
@@ -35,7 +37,7 @@ namespace RainRim
         {
             if (!cell.IsValid || !cell.InBounds(map) || cell.Impassable(map) || !cell.Walkable(map))
                 return false;
-            Building edifice = cell.GetEdifice(map);
+            var edifice = cell.GetEdifice(map);
             return edifice == null || !(edifice is Building_Door buildingDoor) || buildingDoor.Open;
         }
     }

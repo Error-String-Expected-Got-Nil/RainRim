@@ -2,20 +2,20 @@
 using Verse;
 using RimWorld;
 
-namespace RainRim
+namespace RainRim.Projectiles
 {
     public class LizardTongueGrabFlyer : PawnFlyer
     {
-        private Vector3 currentPosition;
-        private int lastCalculatedPositionTick = -1;
+        private Vector3 _currentPosition;
+        private int _lastCalculatedPositionTick = -1;
 
         private void CalculatePosition() 
         {
-            if (lastCalculatedPositionTick == ticksFlying)
+            if (_lastCalculatedPositionTick == ticksFlying)
                 return;
-            lastCalculatedPositionTick = ticksFlying;
-            float timeFraction = (float) ticksFlying / ticksFlightTime;
-            currentPosition = Vector3.Lerp(startVec, DestinationPos, timeFraction);
+            _lastCalculatedPositionTick = ticksFlying;
+            var timeFraction = (float) ticksFlying / ticksFlightTime;
+            _currentPosition = Vector3.Lerp(startVec, DestinationPos, timeFraction);
         }
 
         public override Vector3 DrawPos
@@ -23,17 +23,17 @@ namespace RainRim
             get
             {
                 CalculatePosition();
-                return currentPosition;
+                return _currentPosition;
             }
         }
 
         public override void DrawAt(Vector3 drawLoc, bool flip = false)
         {
             CalculatePosition();
-            FlyingPawn.DrawAt(currentPosition, flip);
+            FlyingPawn.DrawAt(_currentPosition, flip);
             if (CarriedThing == null)
                 return;
-            PawnRenderer.DrawCarriedThing(FlyingPawn, currentPosition, CarriedThing);
+            PawnRenderer.DrawCarriedThing(FlyingPawn, _currentPosition, CarriedThing);
         }
     }
 }
