@@ -3,7 +3,7 @@
 	<ThingDef ParentName="BaseBullet">
 		<defName>RW_LizardTongue</defName>
 		<label>tongue grab</label>
-		<thingClass>RainRim.LizardTongueProjectile</thingClass>
+		<thingClass>RainRim.Projectiles.LizardTongueProjectile</thingClass>
 		<graphicData>
 			<texPath>Things/Projectiles/RW_LizardTongue</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
