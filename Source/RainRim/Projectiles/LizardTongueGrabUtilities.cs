@@ -8,7 +8,7 @@ namespace RainRim.Projectiles
     {
         // Possibly excessive, but I may want to add extra conditions for if the grab should succeed in the future,
         // so I'm putting it in a method
-        public static bool ShouldGrabTarget(Pawn lizard, Pawn target)
+        public static bool CanGrabTarget(Pawn lizard, Pawn target)
         {
             if (lizard.BodySize < target.BodySize) return false;
             return true;
@@ -21,7 +21,8 @@ namespace RainRim.Projectiles
         {
             var relativePosition = (target - origin).ToVector3();
             relativePosition.Normalize();
-            var roundedRelativePosition = new IntVec3((int)Mathf.Round(relativePosition.x), 0, (int)Mathf.Round(relativePosition.z));
+            var roundedRelativePosition = new IntVec3((int)Mathf.Round(relativePosition.x), 0, 
+                (int)Mathf.Round(relativePosition.z));
             var candidatePosition = origin + roundedRelativePosition;
 
             // While an adjacent space between the lizard and target is probably open, there's no guarantee, so we
