@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Manifest>
 	<identifier>RainRim</identifier>
-	<version>0.3.0.0</version>
+	<version>0.3.0.1</version>
 	<manifestUri>https://raw.githubusercontent.com/Error-String-Expected-Got-Nil/RainRim/main/About/Manifest.xml</manifestUri>
 	<downloadUri>https://github.com/Error-String-Expected-Got-Nil/RainRim</downloadUri>
 </Manifest>

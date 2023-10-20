@@ -2,7 +2,7 @@
 <Defs>
 	<ThingDef ParentName="PawnFlyerBase">
 		<defName>RW_LizardTongueGrabFlyer</defName>
-		<thingClass>RainRim.LizardTongueGrabFlyer</thingClass>
+		<thingClass>RainRim.Projectiles.LizardTongueGrabFlyer</thingClass>
 		<pawnFlyer>
 			<flightSpeed>40</flightSpeed>
 		</pawnFlyer>
