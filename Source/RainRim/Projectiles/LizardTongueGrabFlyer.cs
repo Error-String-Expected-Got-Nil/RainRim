@@ -2,6 +2,8 @@
 using Verse;
 using RimWorld;
 
+// TODO: Still valid for 1.4, but 1.5 seems to use a new system for PawnFlyers. Might need a wholly new class for that.
+
 namespace RainRim.Projectiles
 {
     public class LizardTongueGrabFlyer : PawnFlyer
