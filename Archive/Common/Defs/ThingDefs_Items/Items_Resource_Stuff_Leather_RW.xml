@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="LeatherBase">
+		<defName>RW_Leather_GiantLizard</defName>
+		<label>giant lizard hide</label>
+		<description>The deep blue hide and scales of a giant lizard, tanned and prepared for use. Slightly insulative and fairly protective, a good general-purpose leather. Not particularly beautiful compared to similar leathers, however.</description>
+		<graphicData>
+			<color>(10,7,84)</color>
+		</graphicData>
+		<statBases>
+			<MarketValue>3.0</MarketValue>
+			<StuffPower_Armor_Sharp>1.05</StuffPower_Armor_Sharp>
+			<StuffPower_Insulation_Cold>18</StuffPower_Insulation_Cold>
+			<StuffPower_Insulation_Heat>18</StuffPower_Insulation_Heat>
+		</statBases>
+		<stuffProps>
+			<color>(10,7,84)</color>
+			<commonality>0.075</commonality>
+			<statFactors>
+				<Beauty>1.2</Beauty>
+				<MaxHitPoints>1.1</MaxHitPoints>
+			</statFactors>
+		</stuffProps>
+	</ThingDef>
+</Defs>

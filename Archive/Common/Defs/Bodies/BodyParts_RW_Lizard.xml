@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<BodyPartDef>
+		<defName>RW_LizardHeadPlates</defName>
+		<label>head plates</label>
+		<hitPoints>20</hitPoints>
+		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+		<skinCovered>false</skinCovered>
+		<alive>false</alive>
+		<bleedRate>0</bleedRate>
+		<solid>true</solid>
+	</BodyPartDef>
+</Defs>
