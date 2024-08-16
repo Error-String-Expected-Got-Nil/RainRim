@@ -5,9 +5,9 @@
 	<url>https://github.com/Error-String-Expected-Got-Nil/RainRim</url>
 	<packageId>esegn.RainRim</packageId>
 	<supportedVersions>
-		<li>1.4</li>
+		<li>1.5</li>
 	</supportedVersions>
-	<description>Adds in numerous creatures from the game Rain World. Or, it will, anyways. Work in progress! \n\nMost recent changes: \n(0.3.0.1) Minor internal changes. \n(0.3.0.0) Lizard tongues now implemented. \n(0.2.0.0) Blue lizard added! Also further adjustments to lizard stats. \n(0.1.1.1) Did a stat balancing pass on the pink lizard. \n(0.1.1.0) Added new color variants for pink lizard.</description>
+	<description>Work-in-progress mod to add creatures from Rain World to Rimworld.</description>
 	<modDependencies>
 		<li>
 			<packageId>OskarPotocki.VanillaFactionsExpanded.Core</packageId>
@@ -15,8 +15,13 @@
 			<steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2023507013</steamWorkshopUrl>
 			<downloadUrl>https://github.com/Vanilla-Expanded/VanillaExpandedFramework</downloadUrl>
 		</li>
+		<li>
+			<packageId>esegn.RainUtils</packageId>
+			<displayName>RainUtils</displayName>
+		</li>
 	</modDependencies>
 	<loadAfter>
 		<li>OskarPotocki.VanillaFactionsExpanded.Core</li>
+		<li>esegn.RainUtils</li>
 	</loadAfter>
 </ModMetaData>
