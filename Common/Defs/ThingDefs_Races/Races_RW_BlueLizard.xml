@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="ThingBaseRWLizard">
+		<defName>RW_BlueLizard</defName>
+		<label>blue lizard</label>
+		<description>Perhaps one of the more eye-catching colors of giant lizard, but not much more. Blue lizards are the slowest, smallest, and weakest overall compared to their peers, and while they do possess the grappling tongue seen in some other species, theirs is the shortest-range among them. They seem to be acutely aware of this fact, and are generally quite timid.</description>
+		
+		<comps>
+			<li Class="CompProperties_EggLayer">
+				<eggFertilizedDef>RW_BlueLizardEggFertilized</eggFertilizedDef>
+				<eggFertilizationCountMax>1</eggFertilizationCountMax>
+				<eggLayIntervalDays>5</eggLayIntervalDays>
+				<eggProgressUnfertilizedMax>0.5</eggProgressUnfertilizedMax>
+				<eggCountRange>1</eggCountRange>
+			</li>
+
+			<li Class="RainUtils.LocalArmor.CompProperties_LocalArmor">
+				<localArmorInfo>
+					<li>
+						<targetPart>Head</targetPart>
+						<armorSharp>1.2</armorSharp>
+						<armorBlunt>0.9</armorBlunt>
+					</li>
+				</localArmorInfo>
+			</li>
+		</comps>
+		
+		<race>
+			<!-- TODO: Wild biomes! -->
+
+			<maxPreyBodySize>0.95</maxPreyBodySize>
+			<baseBodySize>1.1</baseBodySize>
+			<baseHealthScale>1</baseHealthScale>
+			<baseHungerRate>0.25</baseHungerRate>
+			<foodType>CarnivoreAnimal</foodType>
+			<manhunterOnTameFailChance>0.05</manhunterOnTameFailChance>
+			<manhunterOnDamageChance>0.30</manhunterOnDamageChance>
+
+			<headPosPerRotation>
+				<li>(0, 0, 0.34)</li>
+				<li>(0.37, 0, 0.04)</li>
+				<li>(0, 0, -0.33)</li>
+				<li>(-0.37, 0, 0.04)</li>
+			</headPosPerRotation>
+		</race>
+		
+		<statBases>
+			<MoveSpeed>4.00</MoveSpeed>
+			<MarketValue>300</MarketValue>
+		</statBases>
+		
+		<tools Inherit="False">
+			<li>
+				<label>jaws</label>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>11</power>
+				<cooldownTime>1.7</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>12</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>left claw</label>
+				<labelNoLocation>claw</labelNoLocation>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftClaws</linkedBodyPartsGroup>
+				<chanceFactor>0.4</chanceFactor>
+			</li>
+			<li>
+				<label>right claw</label>
+				<labelNoLocation>claw</labelNoLocation>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>1.5</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightClaws</linkedBodyPartsGroup>
+				<chanceFactor>0.4</chanceFactor>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+	</ThingDef>
+	
+	<PawnKindDef ParentName="RWAnimalKindBaseLizard">
+		<defName>RW_BlueLizard</defName>
+		<race>RW_BlueLizard</race>
+		<label>blue lizard</label>
+		
+		<canArriveManhunter>false</canArriveManhunter>
+		<alternateGraphicChance>1</alternateGraphicChance>
+		<alternateGraphics>
+			<li>
+				<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_BlueLizard</texPath>
+			</li>
+			<li>
+				<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_BlueLizard2</texPath>
+			</li>
+			<li>
+				<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_BlueLizard3</texPath>
+			</li>
+		</alternateGraphics>
+		
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_BlueLizard</texPath>
+					<drawSize>1</drawSize>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_Dessicated_BlueLizard</texPath>
+					<drawSize>1</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_BlueLizard</texPath>
+					<drawSize>1.8</drawSize>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_Dessicated_BlueLizard</texPath>
+					<drawSize>1.8</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_BlueLizard</texPath>
+					<drawSize>2.5</drawSize>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_Dessicated_BlueLizard</texPath>
+					<drawSize>2.5</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+		
+		<combatPower>95</combatPower>
+	</PawnKindDef>
+</Defs>

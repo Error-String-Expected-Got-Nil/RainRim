@@ -18,6 +18,7 @@
 		<li>
 			<packageId>esegn.RainUtils</packageId>
 			<displayName>RainUtils</displayName>
+			<downloadUrl>https://github.com/Error-String-Expected-Got-Nil/RainUtils</downloadUrl>
 		</li>
 	</modDependencies>
 	<loadAfter>

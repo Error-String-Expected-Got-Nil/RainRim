@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<BodyPartDef>
+		<defName>RW_LizardWhisker</defName>
+		<label>whisker</label>
+		<hitPoints>8</hitPoints>
+		<permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+		<tags>
+			<li>SightSource</li>
+			<li>HearingSource</li>
+		</tags>
+		<hitChanceFactors>
+			<li>
+			  <key>Blunt</key>
+			  <value>0.5</value>
+			</li>
+		  </hitChanceFactors>
+	</BodyPartDef>
+</Defs>

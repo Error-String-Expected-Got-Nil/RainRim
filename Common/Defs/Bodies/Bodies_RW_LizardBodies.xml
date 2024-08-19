@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<!-- QuadrupedAnimalWithClawsTailAndJowl, minus the jowl, and three claws per foot instead of five. Head also has more coverage than usual. -->
+	<BodyDef>
+		<defName>RW_LizardBody_General</defName>
+		<label>giant lizard</label>
+		<corePart>
+			<def>Body</def>
+			<height>Middle</height>
+			<depth>Outside</depth>
+			<parts>
+				<li>
+					<def>Tail</def>
+					<coverage>0.05</coverage>
+				</li>
+				<li>
+					<def>Spine</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Stomach</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Heart</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Lung</def>
+					<customLabel>left lung</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Lung</def>
+					<customLabel>right lung</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Kidney</def>
+					<customLabel>left kidney</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Kidney</def>
+					<customLabel>right kidney</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Liver</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Neck</def>
+					<coverage>0.24</coverage>
+					<height>Top</height>
+					<parts>
+						<li>
+							<def>Head</def>
+							<coverage>0.87</coverage>
+							<groups>
+								<li>HeadAttackTool</li>
+							</groups>
+							<parts>
+								<li>
+									<def>Skull</def>
+									<coverage>0.24</coverage>
+									<depth>Inside</depth>
+									<parts>
+										<li>
+											<def>Brain</def>
+											<coverage>0.7</coverage>
+											<depth>Inside</depth>
+										</li>
+									</parts>
+								</li>
+								<li>
+									<def>Eye</def>
+									<customLabel>left eye</customLabel>
+									<coverage>0.09</coverage>
+								</li>
+								<li>
+									<def>Eye</def>
+									<customLabel>right eye</customLabel>
+									<coverage>0.09</coverage>
+								</li>
+								<li>
+									<def>Ear</def>
+									<customLabel>left ear</customLabel>
+									<coverage>0.08</coverage>
+								</li>
+								<li>
+									<def>Ear</def>
+									<customLabel>right ear</customLabel>
+									<coverage>0.08</coverage>
+								</li>
+								<li>
+									<def>Nose</def>
+									<coverage>0.1</coverage>
+								</li>
+								<li>
+									<def>AnimalJaw</def>
+									<coverage>0.1</coverage>
+									<groups>
+										<li>Teeth</li>
+									</groups>
+								</li>
+							</parts>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>front left leg</customLabel>
+					<coverage>0.065</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front left leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontLeftClaws</li>
+              				</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front left leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontLeftClaws</li>
+              				</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front left leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontLeftClaws</li>
+              				</groups>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>front right leg</customLabel>
+					<coverage>0.065</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front right leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontRightClaws</li>
+              				</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front right leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontRightClaws</li>
+              				</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front right leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontRightClaws</li>
+              				</groups>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>rear left leg</customLabel>
+					<coverage>0.065</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear left leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear left leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear left leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>rear right leg</customLabel>
+					<coverage>0.065</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear right leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear right leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear right leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+					</parts>
+				</li>
+			</parts>
+		</corePart>
+	</BodyDef>
+
+	<!-- As above, but eyes, ears, and nose are replaced by whiskers (provide both sight and hearing, non-delicate) -->
+	<BodyDef>
+		<defName>RW_LizardBody_Mole</defName>
+		<label>giant eyeless lizard</label>
+		<corePart>
+			<def>Body</def>
+			<height>Middle</height>
+			<depth>Outside</depth>
+			<parts>
+				<li>
+					<def>Tail</def>
+					<coverage>0.05</coverage>
+				</li>
+				<li>
+					<def>Spine</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Stomach</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Heart</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Lung</def>
+					<customLabel>left lung</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Lung</def>
+					<customLabel>right lung</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Kidney</def>
+					<customLabel>left kidney</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Kidney</def>
+					<customLabel>right kidney</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Liver</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Neck</def>
+					<coverage>0.24</coverage>
+					<height>Top</height>
+					<parts>
+						<li>
+							<def>Head</def>
+							<coverage>0.87</coverage>
+							<groups>
+								<li>HeadAttackTool</li>
+							</groups>
+							<parts>
+								<li>
+									<def>Skull</def>
+									<coverage>0.24</coverage>
+									<depth>Inside</depth>
+									<parts>
+										<li>
+											<def>Brain</def>
+											<coverage>0.7</coverage>
+											<depth>Inside</depth>
+										</li>
+									</parts>
+								</li>
+								<li>
+									<def>AnimalJaw</def>
+									<coverage>0.1</coverage>
+									<groups>
+										<li>Teeth</li>
+									</groups>
+								</li>
+								<li>
+									<def>RW_LizardWhisker</def>
+									<customLabel>first upper left whisker</customLabel>
+									<coverage>0.02</coverage>
+								</li>
+								<li>
+									<def>RW_LizardWhisker</def>
+									<customLabel>second upper left whisker</customLabel>
+									<coverage>0.02</coverage>
+								</li>
+								<li>
+									<def>RW_LizardWhisker</def>
+									<customLabel>third upper left whisker</customLabel>
+									<coverage>0.02</coverage>
+								</li>
+								<li>
+									<def>RW_LizardWhisker</def>
+									<customLabel>first upper right whisker</customLabel>
+									<coverage>0.02</coverage>
+								</li>
+								<li>
+									<def>RW_LizardWhisker</def>
+									<customLabel>second upper right whisker</customLabel>
+									<coverage>0.02</coverage>
+								</li>
+								<li>
+									<def>RW_LizardWhisker</def>
+									<customLabel>third upper right whisker</customLabel>
+									<coverage>0.02</coverage>
+								</li>
+								<li>
+									<def>RW_LizardWhisker</def>
+									<customLabel>first lower left whisker</customLabel>
+									<coverage>0.02</coverage>
+								</li>
+								<li>
+									<def>RW_LizardWhisker</def>
+									<customLabel>second lower left whisker</customLabel>
+									<coverage>0.02</coverage>
+								</li>
+								<li>
+									<def>RW_LizardWhisker</def>
+									<customLabel>first lower right whisker</customLabel>
+									<coverage>0.02</coverage>
+								</li>
+								<li>
+									<def>RW_LizardWhisker</def>
+									<customLabel>second lower right whisker</customLabel>
+									<coverage>0.02</coverage>
+								</li>
+							</parts>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>front left leg</customLabel>
+					<coverage>0.065</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front left leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontLeftClaws</li>
+              				</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front left leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontLeftClaws</li>
+              				</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front left leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontLeftClaws</li>
+              				</groups>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>front right leg</customLabel>
+					<coverage>0.065</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front right leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontRightClaws</li>
+              				</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front right leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontRightClaws</li>
+              				</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front right leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontRightClaws</li>
+              				</groups>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>rear left leg</customLabel>
+					<coverage>0.065</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear left leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear left leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear left leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>rear right leg</customLabel>
+					<coverage>0.065</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear right leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear right leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear right leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+					</parts>
+				</li>
+			</parts>
+		</corePart>
+	</BodyDef>
+
+	<!-- As first lizard body, but six legs instead of four, for the Caramel -->
+	<BodyDef>
+		<defName>RW_LizardBody_Caramel</defName>
+		<label>giant six-legged lizard</label>
+		<corePart>
+			<def>Body</def>
+			<height>Middle</height>
+			<depth>Outside</depth>
+			<parts>
+				<li>
+					<def>Tail</def>
+					<coverage>0.05</coverage>
+				</li>
+				<li>
+					<def>Spine</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Stomach</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Heart</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Lung</def>
+					<customLabel>left lung</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Lung</def>
+					<customLabel>right lung</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Kidney</def>
+					<customLabel>left kidney</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Kidney</def>
+					<customLabel>right kidney</customLabel>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Liver</def>
+					<coverage>0.03</coverage>
+					<depth>Inside</depth>
+				</li>
+				<li>
+					<def>Neck</def>
+					<coverage>0.24</coverage>
+					<height>Top</height>
+					<parts>
+						<li>
+							<def>Head</def>
+							<coverage>0.87</coverage>
+							<groups>
+								<li>HeadAttackTool</li>
+							</groups>
+							<parts>
+								<li>
+									<def>Skull</def>
+									<coverage>0.24</coverage>
+									<depth>Inside</depth>
+									<parts>
+										<li>
+											<def>Brain</def>
+											<coverage>0.7</coverage>
+											<depth>Inside</depth>
+										</li>
+									</parts>
+								</li>
+								<li>
+									<def>Eye</def>
+									<customLabel>left eye</customLabel>
+									<coverage>0.09</coverage>
+								</li>
+								<li>
+									<def>Eye</def>
+									<customLabel>right eye</customLabel>
+									<coverage>0.09</coverage>
+								</li>
+								<li>
+									<def>Ear</def>
+									<customLabel>left ear</customLabel>
+									<coverage>0.08</coverage>
+								</li>
+								<li>
+									<def>Ear</def>
+									<customLabel>right ear</customLabel>
+									<coverage>0.08</coverage>
+								</li>
+								<li>
+									<def>Nose</def>
+									<coverage>0.1</coverage>
+								</li>
+								<li>
+									<def>AnimalJaw</def>
+									<coverage>0.1</coverage>
+									<groups>
+										<li>Teeth</li>
+									</groups>
+								</li>
+							</parts>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>front left leg</customLabel>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front left leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontLeftClaws</li>
+              				</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front left leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontLeftClaws</li>
+              				</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front left leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontLeftClaws</li>
+              				</groups>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>front right leg</customLabel>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front right leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontRightClaws</li>
+              				</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front right leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontRightClaws</li>
+              				</groups>
+						</li>
+						<li>
+							<def>FrontClaw</def>
+              				<customLabel>front right leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+              				<groups>
+                				<li>FrontRightClaws</li>
+              				</groups>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>middle left leg</customLabel>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>middle left leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>middle left leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>middle left leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>middle right leg</customLabel>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>middle right leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>middle right leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>middle right leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>rear left leg</customLabel>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear left leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear left leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear left leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+					</parts>
+				</li>
+				<li>
+					<def>Leg</def>
+					<customLabel>rear right leg</customLabel>
+					<coverage>0.05</coverage>
+					<height>Bottom</height>
+					<parts>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear right leg first claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear right leg second claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+						<li>
+							<def>RearClaw</def>
+              				<customLabel>rear right leg third claw</customLabel>
+              				<coverage>0.05</coverage>
+						</li>
+					</parts>
+				</li>
+			</parts>
+		</corePart>
+	</BodyDef>
+</Defs>

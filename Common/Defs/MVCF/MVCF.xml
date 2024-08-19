@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<MVCF.ModDef>
+		<defName>RainRim</defName>
+		<label>RainRim</label>
+		<description>Required for various innate ranged attacks of some animals, like lizard tongues and spitting.</description>
+		<ActivateFeatures>
+			<li>RangedAnimals</li>
+			<li>IntegratedToggle</li>
+		</ActivateFeatures>
+	</MVCF.ModDef>
+</Defs>
