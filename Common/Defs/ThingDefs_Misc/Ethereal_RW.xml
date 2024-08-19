@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ThingDef ParentName="PawnFlyerBase">
+		<defName>RW_LizardTongueGrabFlyer</defName>
+		<pawnFlyer>
+			<flightSpeed>40</flightSpeed>
+			<workerClass>RainRim.LizardTongueGrapple.TongueGrapplePawnFlyerWorker</workerClass>
+		</pawnFlyer>
+	</ThingDef>
+</Defs>
