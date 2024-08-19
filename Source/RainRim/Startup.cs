@@ -2,16 +2,15 @@
 using HarmonyLib;
 using Verse;
 
-namespace RainRim
+namespace RainRim;
+
+[StaticConstructorOnStartup]
+public static class Startup
 {
-    [StaticConstructorOnStartup]
-    public static class Startup
+    static Startup()
     {
-        static Startup()
-        {
-            Harmony.DEBUG = false;
-            var harmony = new Harmony("RainRim");
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
-        }
+        Harmony.DEBUG = false;
+        var harmony = new Harmony("RainRim");
+        harmony.PatchAll(Assembly.GetExecutingAssembly());
     }
 }
