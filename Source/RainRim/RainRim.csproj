@@ -7,6 +7,7 @@
     <Configurations>1.4;1.5</Configurations>
     <RootNamespace>RainRim</RootNamespace>
     <Platforms>AnyCPU</Platforms>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)' == '1.4'">

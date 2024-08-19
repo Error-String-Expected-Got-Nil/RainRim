@@ -6,11 +6,17 @@ namespace RainRim.LizardTongueGrapple
 {
     public class TongueGrappleProjectile : Projectile
     {
-         // TODO: Smoothly lerp projectile draw position so it appears to slow as it nears the end of its path  
-         // Then make it return if it misses, with opposite lerp? 
-        
+        // Changes the position function from a simple lerp to the inverse parabola stretched so that its peak is
+        // reached at x = 1.0. y = 0 at x = 0; y = 0.75 at x = 0.5; y = 1 at x = 1
+        public override Vector3 ExactPosition => 
+            origin.Yto0() 
+            + (destination - origin).Yto0() * GenMath.InverseParabola(DistanceCoveredFraction * 0.5f)
+            + Vector3.up * def.Altitude;
+         
         protected override void Impact(Thing hitThing, bool blockedByShield = false)
         {
+            // TODO: Combat log entry?
+            
             // Note: base.Impact() is what destroys this projectile. Skip if necessary?
             base.Impact(hitThing, blockedByShield);
 
@@ -53,7 +59,7 @@ namespace RainRim.LizardTongueGrapple
             if (!cell.IsValid || !cell.InBounds(map) || cell.Impassable(map) || !cell.Walkable(map))
                 return false;
             var edifice = cell.GetEdifice(map);
-            return !(edifice is Building_Door buildingDoor) || buildingDoor.Open;
+            return edifice is not Building_Door buildingDoor || buildingDoor.Open;
         }
     }
 }

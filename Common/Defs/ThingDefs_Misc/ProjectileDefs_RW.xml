@@ -13,7 +13,7 @@
 			<flyOverhead>false</flyOverhead>
 			<damageAmountBase>0</damageAmountBase>
 			<damageDef>Stun</damageDef>
-			<speed>50</speed>
+			<speed>30</speed>
 		</projectile>
 	</ThingDef>
 </Defs>
