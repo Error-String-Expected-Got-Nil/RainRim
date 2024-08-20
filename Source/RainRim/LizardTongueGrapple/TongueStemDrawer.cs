@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using RainRim.Utils;
 using UnityEngine;
 using Verse;
 
@@ -31,9 +32,11 @@ public class ThingComp_TongueStemDrawer : ThingComp
 
         if (rootPosMaybe is null || anchorPosMaybe is null) return;
 
-        // TODO: Adjust root position to be at head position if applicable
+        var headOffset = parent is Pawn parentPawn
+            ? MathUtils.TransformVectorByPawn(MathUtils.GetBaseHeadOffset(parentPawn), parentPawn)
+            : new Vector3(0f, 0f, 0f);
 
-        var rootPos = (Vector3)rootPosMaybe;
+        var rootPos = (Vector3)rootPosMaybe + headOffset;
         var anchorPos = (Vector3)anchorPosMaybe;
         
         var relativePos = (anchorPos - rootPos).Yto0();
