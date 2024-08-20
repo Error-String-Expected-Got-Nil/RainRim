@@ -32,7 +32,8 @@ public class ThingComp_TongueStemDrawer : ThingComp
         if (rootPosMaybe is null || anchorPosMaybe is null) return;
 
         // TODO: Adjust root position to be at head position if applicable
-        
+        // TODO: Empty retract stem gets drawn lower altitude than it should be
+
         var rootPos = (Vector3)rootPosMaybe;
         var anchorPos = (Vector3)anchorPosMaybe;
         

@@ -5,6 +5,7 @@
         <category>Ethereal</category>
         <thingClass>RainRim.LizardTongueGrapple.TongueTipDummy</thingClass>
         <useHitPoints>false</useHitPoints>
+        <altitudeLayer>Projectile</altitudeLayer>
         <graphicData>
             <texPath>Things/Projectiles/RW_LizardTongue</texPath>
             <drawSize>0.6</drawSize>
