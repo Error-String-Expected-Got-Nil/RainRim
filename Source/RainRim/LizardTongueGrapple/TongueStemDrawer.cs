@@ -32,7 +32,6 @@ public class ThingComp_TongueStemDrawer : ThingComp
         if (rootPosMaybe is null || anchorPosMaybe is null) return;
 
         // TODO: Adjust root position to be at head position if applicable
-        // TODO: Empty retract stem gets drawn lower altitude than it should be
 
         var rootPos = (Vector3)rootPosMaybe;
         var anchorPos = (Vector3)anchorPosMaybe;
@@ -42,7 +41,7 @@ public class ThingComp_TongueStemDrawer : ThingComp
         StemGraphic.drawSize = new Vector2 { x = StemGraphic.drawSize.x, y = relativePos.magnitude };
 
         var drawPos = rootPos + relativePos * 0.5f;
-        drawPos.y = Mathf.Min(rootPos.y, anchorPos.y) - Altitudes.AltInc;
+        drawPos.y = Mathf.Min(parent.def.Altitude, StemAnchor.def.Altitude) - Altitudes.AltInc;
         
         StemGraphic.DrawWorker(drawPos, Rot4.North, null, null, relativePos.AngleFlat());
     }
