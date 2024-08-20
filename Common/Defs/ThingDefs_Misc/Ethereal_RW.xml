@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	<ThingDef ParentName="PawnFlyerBase">
-		<defName>RW_LizardTongueGrabFlyer</defName>
+		<defName>RW_LizardTongueGrappleFlyer</defName>
+		<thingClass>RainRim.LizardTongueGrapple.TongueGrapplePawnFlyer</thingClass>
 		<pawnFlyer>
 			<flightDurationMin>0</flightDurationMin>
 			<flightSpeed>15</flightSpeed>
+			<workerClass>RainRim.LizardTongueGrapple.TongueGrapplePawnFlyerWorker</workerClass>
+		</pawnFlyer>
+	</ThingDef>
+
+    <ThingDef ParentName="PawnFlyerBase">
+		<defName>RW_LizardTongueRetractFlyer</defName>
+        <thingClass>RainRim.LizardTongueGrapple.TongueRetractPawnFlyer</thingClass>
+		<pawnFlyer>
+			<flightDurationMin>0</flightDurationMin>
+			<flightSpeed>20</flightSpeed>
 			<workerClass>RainRim.LizardTongueGrapple.TongueGrapplePawnFlyerWorker</workerClass>
 		</pawnFlyer>
 	</ThingDef>

@@ -7,7 +7,7 @@
 		<graphicData>
 			<texPath>Things/Projectiles/RW_LizardTongue</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
-			<drawSize>0.4</drawSize>
+			<drawSize>0.6</drawSize>
 		</graphicData>
 		<projectile>
 			<flyOverhead>false</flyOverhead>

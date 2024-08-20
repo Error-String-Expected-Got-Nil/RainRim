@@ -50,6 +50,14 @@
     <DebugType>none</DebugType>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)' == '1.5' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == '1.5' ">
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref" Version="$(Configuration).*-*">
       <ExcludeAssets>runtime</ExcludeAssets>
@@ -57,6 +65,13 @@
     <PackageReference Include="Lib.Harmony" Version="*">
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="RainUtils">
+      <HintPath>..\..\..\RainUtils\1.5\Assemblies\RainUtils.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
 
 </Project>

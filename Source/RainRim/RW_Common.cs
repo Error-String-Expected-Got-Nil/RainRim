@@ -16,6 +16,8 @@ public static class RW_Common
             DefOfHelper.EnsureInitializedInCtor(typeof(ThingDefOf));
         }
 
-        public static ThingDef RW_LizardTongueGrabFlyer;
+        public static ThingDef RW_TongueTipDummy;
+        public static ThingDef RW_LizardTongueGrappleFlyer;
+        public static ThingDef RW_LizardTongueRetractFlyer;
     }
 }

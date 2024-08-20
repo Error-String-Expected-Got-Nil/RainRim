@@ -18,8 +18,8 @@
 			    <hasStandardCommand>true</hasStandardCommand>
 			    <defaultProjectile>RW_TongueGrappleProjectile</defaultProjectile>
 			
-			    <warmupTime>0.25</warmupTime>
-			    <defaultCooldownTime>0.5</defaultCooldownTime>
+			    <warmupTime>0.5</warmupTime>
+			    <defaultCooldownTime>2.0</defaultCooldownTime>
 			
 			    <burstShotCount>1</burstShotCount>
 			    <minRange>1.5</minRange>
@@ -29,5 +29,15 @@
 			    <label>tongue</label>
             </li>
         </verbs>
+        <comps>
+            <li Class="RainRim.Debug.CompProperties_DebugStemDrawerCompGiver">
+                <graphicData>
+                    <texPath>Things/Projectiles/RW_LizardTongueStem</texPath>
+                    <graphicClass>Graphic_Single</graphicClass>
+                    <drawSize>0.6</drawSize>
+                    <shaderType>Transparent</shaderType>
+                </graphicData>
+            </li>
+        </comps>
     </ThingDef>
 </Defs>
