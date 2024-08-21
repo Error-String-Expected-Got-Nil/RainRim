@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -8,13 +7,13 @@ namespace RainRim.Utils;
 public static class MathUtils
 {
     // Default head offsets for animals if their RaceProps don't define them explicitly
-    private static readonly List<Vector3> GenericAnimalHeadOffsets =
-    [
+    private static readonly List<Vector3> GenericAnimalHeadOffsets = new()
+    {
         new Vector3(0f, 0f, 0.4f),
         new Vector3(0.4f, 0f, 0.25f),
         new Vector3(0f, 0f, 0.1f),
         new Vector3(-0.4f, 0f, 0.25f)
-    ];
+    };
     
     // Takes a vector, returning it scaled and rotated based on a pawn's graphic data and body. If the initial vector
     // represents an offset from the center of the pawn's base sprite, the returned vector will be the same point on
