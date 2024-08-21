@@ -12,10 +12,15 @@ public class TongueGrappleProjectile : Projectile
     
     // Changes the position function from a simple lerp to the inverse parabola stretched so that its peak is
     // reached at x = 1.0. y = 0 at x = 0; y = 0.75 at x = 0.5; y = 1 at x = 1
-    public override Vector3 ExactPosition => 
-        origin.Yto0() 
-        + (destination - origin).Yto0() * GenMath.InverseParabola(DistanceCoveredFraction * 0.5f)
-        + Vector3.up * def.Altitude;
+    public override Vector3 ExactPosition 
+        => origin.Yto0() 
+           + (destination - origin).Yto0() * GenMath.InverseParabola(DistanceCoveredFraction * 0.5f)
+           + Vector3.up * def.Altitude;
+
+    public override Quaternion ExactRotation
+        => _stemRoot?.GetComp<ThingComp_TongueStemDrawer>()?.RootPosition is { } drawPos
+            ? Quaternion.LookRotation((ExactPosition - drawPos).Yto0())
+            : base.ExactRotation;
 
     [SuppressMessage("ReSharper", "ParameterHidesMember")]
     public override void Launch(Thing launcher, Vector3 origin, LocalTargetInfo usedTarget, 
@@ -73,7 +78,7 @@ public class TongueGrappleProjectile : Projectile
         {
             var tongueTipDummy = (TongueTipDummy) ThingMaker.MakeThing(RW_Common.RW_ThingDefOf.RW_TongueTipDummy);
             GenSpawn.Spawn(tongueTipDummy, DestinationCell, Map);
-            tongueTipDummy.RotationAngle = (destination - pawn.Position.ToVector3()).AngleFlat();
+            tongueTipDummy.RotationAnchor = _stemRoot;
 
             var thingFlyer = (TongueRetractPawnFlyer)ThingFlyer.MakeThingFlyer(
                 RW_Common.RW_ThingDefOf.RW_LizardTongueRetractFlyer, tongueTipDummy, pawn.Position, destination);

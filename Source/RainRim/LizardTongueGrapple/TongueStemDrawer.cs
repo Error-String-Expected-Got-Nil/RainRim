@@ -14,6 +14,15 @@ public class ThingComp_TongueStemDrawer : ThingComp
     public Graphic StemGraphic;
     public Thing StemAnchor;
 
+    public Vector3? RootPosition
+        => parent.DrawPosHeld is { } drawPos
+            ? drawPos + (
+                parent is Pawn parentPawn 
+                    ? MathUtils.TransformVectorByPawn(MathUtils.GetBaseHeadOffset(parentPawn), parentPawn) 
+                    : new Vector3(0f, 0f, 0f)
+                )
+            : null;
+
     public override void Initialize(CompProperties properties)
     {
         props = properties;
@@ -27,16 +36,12 @@ public class ThingComp_TongueStemDrawer : ThingComp
     {
         if (StemAnchor == null) return;
         
-        var rootPosMaybe = parent.DrawPosHeld;
+        var rootPosMaybe = RootPosition;
         var anchorPosMaybe = StemAnchor.DrawPosHeld;
 
         if (rootPosMaybe is null || anchorPosMaybe is null) return;
 
-        var headOffset = parent is Pawn parentPawn
-            ? MathUtils.TransformVectorByPawn(MathUtils.GetBaseHeadOffset(parentPawn), parentPawn)
-            : new Vector3(0f, 0f, 0f);
-
-        var rootPos = (Vector3)rootPosMaybe + headOffset;
+        var rootPos = (Vector3)rootPosMaybe;
         var anchorPos = (Vector3)anchorPosMaybe;
         
         var relativePos = (anchorPos - rootPos).Yto0();

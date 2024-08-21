@@ -23,6 +23,33 @@
 					</li>
 				</localArmorInfo>
 			</li>
+
+			<li Class="MVCF.Comps.CompProperties_VerbProps">
+				<compClass>MVCF.Comps.Comp_VerbProps</compClass>
+				<verbProps>
+					<li>
+						<label>tongue grapple</label>
+						<description>The lizard uses its long tongue to grapple the target and pull them to its location. If the target is larger than the lizard, the grapple will fail.</description>
+						<canBeToggled>true</canBeToggled>
+						<separateToggle>false</separateToggle>
+						<comps>
+							<li Class="MVCF.VerbComps.VerbCompProperties_Cooldown">
+								<compClass>MVCF.VerbComps.VerbComp_Cooldown</compClass>
+								<cooldownTime>6.5</cooldownTime> <!-- Actual verb cooldown -->
+							</li>
+						</comps>
+					</li>
+				</verbProps>
+			</li>
+
+			<li Class="RainRim.LizardTongueGrapple.CompProperties_TongueStemDrawer">
+				<graphicData>
+                    <texPath>Things/Projectiles/RW_LizardTongueStem</texPath>
+                    <graphicClass>Graphic_Single</graphicClass>
+                    <drawSize>0.6</drawSize>
+                    <shaderType>Transparent</shaderType>
+                </graphicData>
+			</li>
 		</comps>
 		
 		<race>
@@ -101,6 +128,26 @@
 				<chanceFactor>0.2</chanceFactor>
 			</li>
 		</tools>
+
+		<verbs>
+			<li>
+				<label>tongue grapple</label>
+				<verbClass>Verb_Shoot</verbClass>
+
+				<hasStandardCommand>true</hasStandardCommand>
+				<defaultProjectile>RW_TongueGrappleProjectile</defaultProjectile>
+				
+				<warmupTime>0.75</warmupTime>
+				<defaultCooldownTime>0.75</defaultCooldownTime> <!-- Note: Not the actual verb cooldown, this is the stun after using the verb -->
+				
+				<burstShotCount>1</burstShotCount>
+				<minRange>1.5</minRange>
+				<range>6</range>
+				
+				<soundCast>RW_LizardSpit</soundCast>
+				<muzzleFlashScale>0</muzzleFlashScale>
+			</li>
+		</verbs>
 	</ThingDef>
 	
 	<PawnKindDef ParentName="RWAnimalKindBaseLizard">

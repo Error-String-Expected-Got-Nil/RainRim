@@ -5,7 +5,7 @@
 		<thingClass>RainRim.LizardTongueGrapple.TongueGrapplePawnFlyer</thingClass>
 		<pawnFlyer>
 			<flightDurationMin>0</flightDurationMin>
-			<flightSpeed>15</flightSpeed>
+			<flightSpeed>10</flightSpeed>
 			<workerClass>RainRim.LizardTongueGrapple.TongueGrapplePawnFlyerWorker</workerClass>
 		</pawnFlyer>
 	</ThingDef>
@@ -15,7 +15,7 @@
         <thingClass>RainRim.LizardTongueGrapple.TongueRetractPawnFlyer</thingClass>
 		<pawnFlyer>
 			<flightDurationMin>0</flightDurationMin>
-			<flightSpeed>20</flightSpeed>
+			<flightSpeed>15</flightSpeed>
 			<workerClass>RainRim.LizardTongueGrapple.TongueGrapplePawnFlyerWorker</workerClass>
 		</pawnFlyer>
 	</ThingDef>
