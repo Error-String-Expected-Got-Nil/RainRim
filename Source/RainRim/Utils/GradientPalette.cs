@@ -6,6 +6,7 @@ namespace RainRim.Utils;
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable FieldCanBeMadeReadOnly.Global
 // ReSharper disable ConvertToConstant.Global
+// ReSharper disable ClassNeverInstantiated.Global
 
 public class GradientPalette
 {
@@ -13,15 +14,15 @@ public class GradientPalette
     // Curve is the value of k for the WeightedCurve function.
     public float hueBase = 0f;
     public float hueVariation = 0f;
-    public float hueCurve = 1f;
+    public float hueCurve = 1000f;
     
     public float satBase = 1f;
     public float satVariation = 0f;
-    public float satCurve = 1f;
+    public float satCurve = 1000f;
     
     public float litBase = 0.5f;
     public float litVariation = 0f;
-    public float litCurve = 1f;
+    public float litCurve = 1000f;
 
     // Hue is wrapped around to fit into range [0, 1), sat and lit are clamped to [0, 1]
     public Color PickColor(float hueFactor, float satFactor, float litFactor) 
