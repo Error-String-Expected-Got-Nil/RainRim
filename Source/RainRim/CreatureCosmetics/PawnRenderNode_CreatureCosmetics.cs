@@ -35,7 +35,7 @@ public class PawnRenderNode_CreatureCosmetics : PawnRenderNode
             CosmeticGraphic = graphicData.Graphic;
         }
         else
-            Log.Error("[RainRim] - Pawn " + pawn.ToStringSafe() + " did not have CreatureCosmeticGraphics def " +
+            Log.Error("[RainRim] - Pawn " + pawn.ToStringSafe() + " did not have CreatureCosmeticsGraphics def " +
                       "extension in its PawnKindDef, failed to initialize render node");
     }
 
