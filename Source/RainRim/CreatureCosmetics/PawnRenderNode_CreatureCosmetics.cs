@@ -23,7 +23,7 @@ public class PawnRenderNode_CreatureCosmetics : PawnRenderNode
     {
         Colorize = CastProps.colorize;
 
-        if (pawn.kindDef.GetModExtension<ModExtension_CreatureCosmeticGraphics>() is { } cosmetics)
+        if (pawn.kindDef.GetModExtension<ModExtension_CreatureCosmeticsGraphics>() is { } cosmetics)
         {
             if (!cosmetics.cosmeticGraphics.TryGetValue(CastProps.graphicKey, out var graphicData))
             {

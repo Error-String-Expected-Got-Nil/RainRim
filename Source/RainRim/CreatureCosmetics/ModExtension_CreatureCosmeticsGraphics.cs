@@ -8,7 +8,7 @@ namespace RainRim.CreatureCosmetics;
 // ReSharper disable CollectionNeverUpdated.Global
 // ReSharper disable UnassignedField.Global
 
-public class ModExtension_CreatureCosmeticGraphics : DefModExtension
+public class ModExtension_CreatureCosmeticsGraphics : DefModExtension
 {
     public Dictionary<string, GraphicData> cosmeticGraphics;
 }

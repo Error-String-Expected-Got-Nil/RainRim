@@ -50,10 +50,23 @@
                     <shaderType>Transparent</shaderType>
                 </graphicData>
 			</li>
+
+			<li Class="RainRim.CreatureCosmetics.CompProperties_RandomColorPicker">
+				<gradientPalette>
+					<hueBase>0.57</hueBase>
+					<hueVariation>0.08</hueVariation>
+					<hueCurve>0.6</hueCurve>
+
+					<litBase>0.5</litBase>
+					<litVariation>0.15</litVariation>
+					<litCurve>0.1</litCurve>
+				</gradientPalette>
+			</li>
 		</comps>
 		
 		<race>
 			<!-- TODO: Wild biomes! -->
+			<renderTree>RW_LizardRenderer</renderTree>
 
 			<maxPreyBodySize>0.95</maxPreyBodySize>
 			<baseBodySize>1.1</baseBodySize>
@@ -156,24 +169,13 @@
 		<label>blue lizard</label>
 		
 		<canArriveManhunter>false</canArriveManhunter>
-		<alternateGraphicChance>1</alternateGraphicChance>
-		<alternateGraphics>
-			<li>
-				<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_BlueLizard</texPath>
-			</li>
-			<li>
-				<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_BlueLizard2</texPath>
-			</li>
-			<li>
-				<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_BlueLizard3</texPath>
-			</li>
-		</alternateGraphics>
 		
 		<lifeStages>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_BlueLizard</texPath>
+					<texPath>Things/Pawn/Animal/Layered/RW_BlueLizard/RW_BlueLizard_Base</texPath>
 					<drawSize>1</drawSize>
+					<shaderType>Transparent</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_Dessicated_BlueLizard</texPath>
@@ -182,8 +184,9 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_BlueLizard</texPath>
+					<texPath>Things/Pawn/Animal/Layered/RW_BlueLizard/RW_BlueLizard_Base</texPath>
 					<drawSize>1.8</drawSize>
+					<shaderType>Transparent</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_Dessicated_BlueLizard</texPath>
@@ -192,8 +195,9 @@
 			</li>
 			<li>
 				<bodyGraphicData>
-					<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_BlueLizard</texPath>
+					<texPath>Things/Pawn/Animal/Layered/RW_BlueLizard/RW_BlueLizard_Base</texPath>
 					<drawSize>2.5</drawSize>
+					<shaderType>Transparent</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
 					<texPath>Things/Pawn/Animal/RW_BlueLizard/RW_Dessicated_BlueLizard</texPath>
@@ -201,6 +205,21 @@
 				</dessicatedBodyGraphicData>
 			</li>
 		</lifeStages>
+
+		<modExtensions>
+			<li Class="RainRim.CreatureCosmetics.ModExtension_CreatureCosmeticsGraphics">
+				<cosmeticGraphics>
+					<li>
+						<key>overlay</key>
+						<value>
+							<texPath>Things/Pawn/Animal/Layered/RW_BlueLizard/RW_BlueLizard_Overlay</texPath>
+							<maskPath>_mask</maskPath>
+							<graphicClass>Graphic_Multi</graphicClass>
+						</value>
+					</li>
+				</cosmeticGraphics>
+			</li>
+		</modExtensions>
 		
 		<combatPower>95</combatPower>
 	</PawnKindDef>
