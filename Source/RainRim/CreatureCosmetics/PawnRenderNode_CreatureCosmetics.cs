@@ -50,7 +50,7 @@ public class PawnRenderNode_CreatureCosmetics : PawnRenderNode
 
     public override Graphic GraphicFor(Pawn pawn) 
         => CosmeticGraphic != null 
-            ? GraphicDatabase.Get<Graphic_Multi>(CosmeticGraphic.path, ShaderDatabase.CutoutComplex,
+            ? GraphicDatabase.Get<Graphic_Multi>(CosmeticGraphic.path, CosmeticGraphic.Shader,
             pawn.ageTracker.CurKindLifeStage.bodyGraphicData.drawSize, ColorFor(pawn), Color.white,
             CosmeticGraphic.data, CosmeticGraphic.maskPath) 
             : null;
