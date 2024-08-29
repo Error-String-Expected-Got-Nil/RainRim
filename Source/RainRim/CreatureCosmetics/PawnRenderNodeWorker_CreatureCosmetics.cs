@@ -7,6 +7,8 @@ namespace RainRim.CreatureCosmetics;
 
 public class PawnRenderNodeWorker_CreatureCosmetics : PawnRenderNodeWorker
 {
+    protected override Graphic GetGraphic(PawnRenderNode node, PawnDrawParms parms) => node.GraphicFor(parms.pawn);
+    
     public override MaterialPropertyBlock GetMaterialPropertyBlock(PawnRenderNode node, Material material,
         PawnDrawParms parms)
     {

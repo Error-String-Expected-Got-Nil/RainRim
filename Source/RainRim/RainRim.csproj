@@ -58,6 +58,10 @@
     <DebugType>none</DebugType>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(Configuration)' == '1.5' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Krafs.Rimworld.Ref" Version="$(Configuration).*-*">
       <ExcludeAssets>runtime</ExcludeAssets>
