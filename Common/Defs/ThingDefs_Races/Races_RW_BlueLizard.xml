@@ -57,6 +57,8 @@
 					<hueVariation>0.08</hueVariation>
 					<hueCurve>0.6</hueCurve>
 
+					<satBase>0.9</satBase>
+
 					<litBase>0.5</litBase>
 					<litVariation>0.15</litVariation>
 					<litCurve>0.1</litCurve>
@@ -214,7 +216,7 @@
 						<value>
 							<texPath>Things/Pawn/Animal/Layered/RW_BlueLizard/RW_BlueLizard_Overlay</texPath>
 							<graphicClass>Graphic_Multi</graphicClass>
-							<shaderType>Transparent</shaderType>
+							<shaderType>TransparentPostLight</shaderType>
 						</value>
 					</li>
 				</cosmeticGraphics>
