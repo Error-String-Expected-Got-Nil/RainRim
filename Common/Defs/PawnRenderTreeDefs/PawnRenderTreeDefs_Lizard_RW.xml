@@ -19,7 +19,7 @@
                             <baseLayer>3</baseLayer>
                             <rotDrawMode>Fresh, Rotting</rotDrawMode>
                             <graphicKey>overlay</graphicKey>
-                            <colorize>false</colorize>
+                            <colorize>true</colorize>
                         </li>
                         <li>
                             <debugLabel>Wounds</debugLabel>

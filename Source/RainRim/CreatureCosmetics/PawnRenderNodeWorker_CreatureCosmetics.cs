@@ -15,7 +15,7 @@ public class PawnRenderNodeWorker_CreatureCosmetics : PawnRenderNodeWorker
         if (GetGraphic(node, parms) == null) return null;
 
         var matPropBlock = node.MatPropBlock;
-        var color = material.color;
+        var color = node.ColorFor(parms.pawn);
         color.a *= ((PawnRenderNode_CreatureCosmetics)node).OpacityFactor;
         matPropBlock.SetColor(ShaderPropertyIDs.Color, color);
         

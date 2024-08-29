@@ -213,8 +213,8 @@
 						<key>overlay</key>
 						<value>
 							<texPath>Things/Pawn/Animal/Layered/RW_BlueLizard/RW_BlueLizard_Overlay</texPath>
-							<maskPath>Things/Pawn/Animal/Layered/RW_BlueLizard/RW_BlueLizard_Mask</maskPath>
 							<graphicClass>Graphic_Multi</graphicClass>
+							<shaderType>Transparent</shaderType>
 						</value>
 					</li>
 				</cosmeticGraphics>
