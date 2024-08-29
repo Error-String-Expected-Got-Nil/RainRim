@@ -176,7 +176,7 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Layered/RW_BlueLizard/RW_BlueLizard_Base</texPath>
-					<drawSize>1</drawSize>
+					<drawSize>(1, 0.5)</drawSize>
 					<shaderType>Transparent</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
@@ -187,7 +187,7 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Layered/RW_BlueLizard/RW_BlueLizard_Base</texPath>
-					<drawSize>1.8</drawSize>
+					<drawSize>(1.8, 0.9)</drawSize>
 					<shaderType>Transparent</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>
@@ -198,7 +198,7 @@
 			<li>
 				<bodyGraphicData>
 					<texPath>Things/Pawn/Animal/Layered/RW_BlueLizard/RW_BlueLizard_Base</texPath>
-					<drawSize>2.5</drawSize>
+					<drawSize>(2.5, 1.125)</drawSize>
 					<shaderType>Transparent</shaderType>
 				</bodyGraphicData>
 				<dessicatedBodyGraphicData>

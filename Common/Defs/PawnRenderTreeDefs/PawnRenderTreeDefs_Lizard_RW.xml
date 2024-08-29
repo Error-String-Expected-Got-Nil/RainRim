@@ -9,7 +9,7 @@
                 <li>
                     <debugLabel>Body</debugLabel>
                     <tagDef>Body</tagDef>
-                    <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+                    <nodeClass>RainRim.CreatureCosmetics.PawnRenderNode_AnimalPart_Rectangular</nodeClass>
                     <useRottenColor>true</useRottenColor>
                     <children>
                         <li Class="RainRim.CreatureCosmetics.PawnRenderNodeProperties_CreatureCosmetics">
@@ -20,10 +20,11 @@
                             <rotDrawMode>Fresh, Rotting</rotDrawMode>
                             <graphicKey>overlay</graphicKey>
                             <colorize>true</colorize>
+                            <rectangular>true</rectangular>
                         </li>
                         <li>
                             <debugLabel>Wounds</debugLabel>
-                            <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+                            <nodeClass>RainRim.CreatureCosmetics.PawnRenderNode_AnimalPart_Rectangular</nodeClass>
                             <workerClass>PawnRenderNodeWOrker_OverlayWounds</workerClass>
                             <overlayLayer>Body</overlayLayer>
                             <useGraphic>false</useGraphic>
@@ -31,7 +32,7 @@
                         </li>
                         <li>
                             <debugLabel>Firefoam</debugLabel>
-                            <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+                            <nodeClass>RainRim.CreatureCosmetics.PawnRenderNode_AnimalPart_Rectangular</nodeClass>
                             <workerClass>PawnRenderNodeWorker_OverlayFirefoam</workerClass>
                             <useGraphic>false</useGraphic>
                             <baseLayer>8</baseLayer>

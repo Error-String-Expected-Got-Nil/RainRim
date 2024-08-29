@@ -44,9 +44,18 @@ public class PawnRenderNode_CreatureCosmetics : PawnRenderNode
     }
 
     public override GraphicMeshSet MeshSetFor(Pawn pawn)
-        => GraphicFor(pawn) is { } pawnGraphic
-            ? MeshPool.GetMeshSetForSize(pawnGraphic.drawSize.x, pawnGraphic.drawSize.y)
-            : null;
+    {
+        if (GraphicFor(pawn) is not { } pawnGraphic) return null;
+        
+        if (!CastProps.rectangular)
+            return MeshPool.GetMeshSetForSize(pawnGraphic.drawSize.x, pawnGraphic.drawSize.y);
+            
+        var horizMeshSet = MeshPool.GetMeshSetForSize(pawnGraphic.drawSize.x, pawnGraphic.drawSize.y);
+        var vertMeshSet = MeshPool.GetMeshSetForSize(pawnGraphic.drawSize.y, pawnGraphic.drawSize.x);
+
+        return new GraphicMeshSet(vertMeshSet.MeshAt(Rot4.North), horizMeshSet.MeshAt(Rot4.East), 
+            vertMeshSet.MeshAt(Rot4.South), horizMeshSet.MeshAt(Rot4.West));
+    }
 
     public override Graphic GraphicFor(Pawn pawn) 
         => CosmeticGraphic != null 
@@ -65,6 +74,7 @@ public class PawnRenderNodeProperties_CreatureCosmetics : PawnRenderNodeProperti
 {
     public string graphicKey;
     public bool colorize = false;
+    public bool rectangular = false;
     
     public PawnRenderNodeProperties_CreatureCosmetics()
     {
