@@ -79,10 +79,10 @@
 			<manhunterOnDamageChance>0.30</manhunterOnDamageChance>
 
 			<headPosPerRotation>
-				<li>(0, 0, 0.34)</li>
-				<li>(0.37, 0, 0.04)</li>
-				<li>(0, 0, -0.33)</li>
-				<li>(-0.37, 0, 0.04)</li>
+				<li>(0, 0, 0.73)</li>
+				<li>(0.37, 0, 0.08)</li>
+				<li>(0, 0, -0.70)</li>
+				<li>(-0.37, 0, 0.08)</li>
 			</headPosPerRotation>
 		</race>
 		
