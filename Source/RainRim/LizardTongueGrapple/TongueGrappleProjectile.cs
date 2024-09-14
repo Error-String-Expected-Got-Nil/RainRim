@@ -8,7 +8,7 @@ namespace RainRim.LizardTongueGrapple;
 
 public class TongueGrappleProjectile : Projectile
 {
-    private ThingWithComps _stemRoot;
+    protected ThingWithComps StemRoot;
     
     // Changes the position function from a simple lerp to the inverse parabola stretched so that its peak is
     // reached at x = 1.0. y = 0 at x = 0; y = 0.75 at x = 0.5; y = 1 at x = 1
@@ -18,7 +18,7 @@ public class TongueGrappleProjectile : Projectile
            + Vector3.up * def.Altitude;
 
     public override Quaternion ExactRotation
-        => _stemRoot?.GetComp<ThingComp_TongueStemDrawer>()?.RootPosition is { } drawPos
+        => StemRoot?.GetComp<ThingComp_TongueStemDrawer>()?.RootPosition is { } drawPos
             ? Quaternion.LookRotation((ExactPosition - drawPos).Yto0())
             : base.ExactRotation;
 
@@ -33,7 +33,7 @@ public class TongueGrappleProjectile : Projectile
         if (launcher is ThingWithComps launcherWithComps
             && launcherWithComps.GetComp<ThingComp_TongueStemDrawer>() is { } drawerComp)
         {
-            _stemRoot = launcherWithComps;
+            StemRoot = launcherWithComps;
             drawerComp.StemAnchor = this;
         }
         else
@@ -45,7 +45,7 @@ public class TongueGrappleProjectile : Projectile
     {
         // TODO: Combat log entry?
         
-        if (_stemRoot?.GetComp<ThingComp_TongueStemDrawer>() is { } drawerComp1 && drawerComp1.StemAnchor == this)
+        if (StemRoot?.GetComp<ThingComp_TongueStemDrawer>() is { } drawerComp1 && drawerComp1.StemAnchor == this)
             drawerComp1.StemAnchor = null;
 
         if (hitThing is Pawn target && launcher is Pawn lizard && CanGrappleTarget(lizard, target))
@@ -62,9 +62,9 @@ public class TongueGrappleProjectile : Projectile
 
             if (pawnFlyer == null) return;
 
-            if (_stemRoot?.GetComp<ThingComp_TongueStemDrawer>() is { StemAnchor: null } drawerComp2)
+            if (StemRoot?.GetComp<ThingComp_TongueStemDrawer>() is { StemAnchor: null } drawerComp2)
             {
-                pawnFlyer.StemRoot = _stemRoot;
+                pawnFlyer.StemRoot = StemRoot;
                 drawerComp2.StemAnchor = target;
             }
 
@@ -76,9 +76,9 @@ public class TongueGrappleProjectile : Projectile
 
         if (launcher is Pawn pawn)
         {
-            var tongueTipDummy = (TongueTipDummy) ThingMaker.MakeThing(RW_Common.RW_ThingDefOf.RW_TongueTipDummy);
+            var tongueTipDummy = (TongueTipDummy)ThingMaker.MakeThing(RW_Common.RW_ThingDefOf.RW_TongueTipDummy);
             GenSpawn.Spawn(tongueTipDummy, DestinationCell, Map);
-            tongueTipDummy.RotationAnchor = _stemRoot;
+            tongueTipDummy.RotationAnchor = StemRoot;
 
             var thingFlyer = (TongueRetractPawnFlyer)ThingFlyer.MakeThingFlyer(
                 RW_Common.RW_ThingDefOf.RW_LizardTongueRetractFlyer, tongueTipDummy, pawn.Position, destination);
@@ -88,14 +88,18 @@ public class TongueGrappleProjectile : Projectile
             
             if (thingFlyer == null) return;
 
-            if (_stemRoot?.GetComp<ThingComp_TongueStemDrawer>() is { StemAnchor: null } drawerComp3)
+            if (StemRoot?.GetComp<ThingComp_TongueStemDrawer>() is { StemAnchor: null } drawerComp3)
             {
-                thingFlyer.StemRoot = _stemRoot;
+                thingFlyer.StemRoot = StemRoot;
                 drawerComp3.StemAnchor = tongueTipDummy;
             }
 
             GenSpawn.Spawn(thingFlyer, pawn.Position, pawn.Map);
+
+            return;
         }
+        
+        base.Impact(hitThing, blockedByShield);
     }
 
     private static bool CanGrappleTarget(Pawn lizard, Pawn target)
@@ -105,7 +109,7 @@ public class TongueGrappleProjectile : Projectile
         
     // Gets the space adjacent to the origin that's between the origin and the target, or the origin if that space
     // cannot be stood on
-    private static IntVec3 GetDestinationPosition(IntVec3 origin, IntVec3 target, Map map)
+    protected static IntVec3 GetDestinationPosition(IntVec3 origin, IntVec3 target, Map map)
     {
         var relativePosition = (target - origin).ToVector3();
         relativePosition.Normalize();
@@ -128,6 +132,6 @@ public class TongueGrappleProjectile : Projectile
     {
         base.ExposeData();
         
-        Scribe_References.Look(ref _stemRoot, nameof(_stemRoot));
+        Scribe_References.Look(ref StemRoot, nameof(StemRoot));
     }
 }
