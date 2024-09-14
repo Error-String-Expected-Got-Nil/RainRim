@@ -40,4 +40,45 @@
             </li>
         </comps>
     </ThingDef>
+
+    <ThingDef ParentName="BaseWeapon">
+        <defName>RW_TongueDisarmTestWeapon</defName>
+        <label>tongue disarm test weapon</label>
+        <techLevel>Animal</techLevel>
+        <statBases>
+            <Mass>1.0</Mass>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Projectiles/RW_LizardTongue</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+			
+			    <hasStandardCommand>true</hasStandardCommand>
+			    <defaultProjectile>RW_TongueDisarmProjectile</defaultProjectile>
+			
+			    <warmupTime>0.5</warmupTime>
+			    <defaultCooldownTime>2.0</defaultCooldownTime>
+			
+			    <burstShotCount>1</burstShotCount>
+			    <minRange>1.5</minRange>
+			    <range>10</range>
+			
+			    <muzzleFlashScale>0</muzzleFlashScale>
+			    <label>tongue</label>
+            </li>
+        </verbs>
+        <comps>
+            <li Class="RainRim.Debug.CompProperties_DebugStemDrawerCompGiver">
+                <graphicData>
+                    <texPath>Things/Projectiles/RW_LizardTongueStem</texPath>
+                    <graphicClass>Graphic_Single</graphicClass>
+                    <drawSize>0.6</drawSize>
+                    <shaderType>Transparent</shaderType>
+                </graphicData>
+            </li>
+        </comps>
+    </ThingDef>
 </Defs>
