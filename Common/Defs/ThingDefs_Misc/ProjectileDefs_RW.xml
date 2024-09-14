@@ -16,4 +16,21 @@
 			<speed>30</speed>
 		</projectile>
 	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>RW_TongueDisarmProjectile</defName>
+		<label>tongue disarm</label>
+		<thingClass>RainRim.LizardTongueGrapple.TongueDisarmProjectile</thingClass>
+		<graphicData>
+			<texPath>Things/Projectiles/RW_LizardTongue</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>0.6</drawSize>
+		</graphicData>
+		<projectile>
+			<flyOverhead>false</flyOverhead>
+			<damageAmountBase>0</damageAmountBase>
+			<damageDef>Stun</damageDef>
+			<speed>30</speed>
+		</projectile>
+	</ThingDef>
 </Defs>

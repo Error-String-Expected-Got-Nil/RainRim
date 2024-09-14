@@ -30,9 +30,12 @@ public class TongueDisarmProjectile : TongueGrappleProjectile
             var equipmentFlyer = (TongueRetractPawnFlyer)ThingFlyer.MakeThingFlyer(
                 RW_Common.RW_ThingDefOf.RW_LizardTongueRetractFlyer, dropped, thingDestinationPosition, 
                 thingInitialPosition);
-
+            
             if (equipmentFlyer != null)
+            {
+                equipmentFlyer.DestroyOnLand = false;
                 GenSpawn.Spawn(equipmentFlyer, lizard.Position, lizard.Map);
+            }
         }
             
         // Always spawn tongue tip retract dummy, needed whether target was disarmed or not.

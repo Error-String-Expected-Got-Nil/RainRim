@@ -10,6 +10,7 @@ namespace RainRim.LizardTongueGrapple;
 public class TongueRetractPawnFlyer : PawnFlyer
 {
     public ThingWithComps StemRoot;
+    public bool DestroyOnLand = true;
 
     protected override void RespawnPawn()
     {
@@ -22,7 +23,7 @@ public class TongueRetractPawnFlyer : PawnFlyer
         if (StemRoot?.GetComp<ThingComp_TongueStemDrawer>() is { } comp)
             comp.StemAnchor = null;
         
-        flyingThing.Destroy();
+        if (DestroyOnLand) flyingThing.Destroy();
     }
 
     // Empty override to disable shadow drawing
@@ -33,5 +34,6 @@ public class TongueRetractPawnFlyer : PawnFlyer
         base.ExposeData();
         
         Scribe_References.Look(ref StemRoot, nameof(StemRoot));
+        Scribe_Values.Look(ref DestroyOnLand, nameof(DestroyOnLand));
     }
 }
