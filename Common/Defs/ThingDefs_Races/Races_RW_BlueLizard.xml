@@ -219,6 +219,14 @@
 							<shaderType>TransparentPostLight</shaderType>
 						</value>
 					</li>
+					<li>
+						<key>head</key>
+						<value>
+							<texPath>Things/Pawn/Animal/Layered/RW_BlueLizard/RW_BlueLizard_Overlay_Head</texPath>
+							<graphicClass>Graphic_Multi</graphicClass>
+							<shaderType>TransparentPostLight</shaderType>
+						</value>
+					</li>
 				</cosmeticGraphics>
 			</li>
 		</modExtensions>

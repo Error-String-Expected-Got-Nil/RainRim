@@ -22,20 +22,31 @@
                             <colorize>true</colorize>
                             <rectangular>true</rectangular>
                         </li>
+                        <li Class="RainRim.CreatureCosmetics.PawnRenderNodeProperties_CreatureCosmetics">
+                            <debugLabel>Creature Cosmetics (Head)</debugLabel>
+                            <tagDef>RW_LizardHead</tagDef>
+                            <nodeClass>RainRim.CreatureCosmetics.PawnRenderNode_CreatureCosmetics</nodeClass>
+                            <workerClass>RainRim.CreatureCosmetics.PawnRenderNodeWorker_CreatureCosmetics</workerClass>
+                            <baseLayer>5</baseLayer>
+                            <rotDrawMode>Fresh, Rotting</rotDrawMode>
+                            <graphicKey>head</graphicKey>
+                            <colorize>true</colorize>
+                            <rectangular>true</rectangular>
+                        </li>
                         <li>
                             <debugLabel>Wounds</debugLabel>
                             <nodeClass>RainRim.CreatureCosmetics.PawnRenderNode_AnimalPart_Rectangular</nodeClass>
                             <workerClass>PawnRenderNodeWOrker_OverlayWounds</workerClass>
                             <overlayLayer>Body</overlayLayer>
                             <useGraphic>false</useGraphic>
-                            <baseLayer>5</baseLayer>
+                            <baseLayer>8</baseLayer>
                         </li>
                         <li>
                             <debugLabel>Firefoam</debugLabel>
                             <nodeClass>RainRim.CreatureCosmetics.PawnRenderNode_AnimalPart_Rectangular</nodeClass>
                             <workerClass>PawnRenderNodeWorker_OverlayFirefoam</workerClass>
                             <useGraphic>false</useGraphic>
-                            <baseLayer>8</baseLayer>
+                            <baseLayer>10</baseLayer>
                         </li>
                     </children>
                 </li>
