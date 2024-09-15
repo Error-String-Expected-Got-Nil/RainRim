@@ -11,11 +11,11 @@ public class LizardSpitProjectile : Projectile
     {
         base.Impact(hitThing, blockedByShield);
 
-        if (Props == null || hitThing is not Pawn { health.hediffSet: not null } target) return;
-        if (blockedByShield && Random.value < Props.shieldBlockChance) return;
+        if (hitThing is not Pawn { health.hediffSet: not null } target || Props is not { } props) return;
+        if (blockedByShield && Random.value < props.shieldBlockChance) return;
 
-        var spitHediff = target.health.hediffSet.GetFirstHediffOfDef(Props.hediff)
-                         ?? target.health.AddHediff(Props.hediff);
-        spitHediff.Severity += Props.spitSeverity;
+        var spitHediff = target.health.hediffSet.GetFirstHediffOfDef(props.hediff)
+                         ?? target.health.AddHediff(props.hediff);
+        spitHediff.Severity += props.spitSeverity;
     }
 }
