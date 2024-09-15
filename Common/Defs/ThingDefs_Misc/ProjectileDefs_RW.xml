@@ -33,4 +33,29 @@
 			<speed>30</speed>
 		</projectile>
 	</ThingDef>
+
+	<ThingDef ParentName="BaseBullet">
+		<defName>RW_RedSpitProjectile</defName>
+		<label>red spit</label>
+		<thingClass>RainRim.LizardSpit.LizardSpitProjectile</thingClass>
+		<graphicData>
+			<texPath>Things/Projectiles/RW_RedSpit</texPath>
+			<graphicClass>Graphic_Random</graphicClass>
+			<drawSize>0.5</drawSize>
+		</graphicData>
+		<projectile>
+			<useGraphicClass>true</useGraphicClass>
+			<flyOverhead>false</flyOverhead>
+			<damageAmountBase>5</damageAmountBase>
+			<damageDef>Stun</damageDef>
+			<speed>20</speed>
+		</projectile>
+		<modExtensions>
+			<li Class="RainRim.LizardSpit.ModExtension_LizardSpitProps">
+				<hediff>RW_LizardSpitHediff</hediff>
+				<spitSeverity>0.2</spitSeverity>
+				<shieldBlockChance>0.5</shieldBlockChance>
+			</li>
+		</modExtensions>
+	</ThingDef>
 </Defs>

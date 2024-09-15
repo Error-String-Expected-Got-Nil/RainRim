@@ -81,4 +81,36 @@
             </li>
         </comps>
     </ThingDef>
+
+    <ThingDef ParentName="BaseWeapon">
+        <defName>RW_RedSpitTestWeapon</defName>
+        <label>red spit test weapon</label>
+        <techLevel>Animal</techLevel>
+        <statBases>
+            <Mass>1.0</Mass>
+        </statBases>
+        <graphicData>
+            <texPath>Things/Projectiles/RW_LizardTongue</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+			
+			    <hasStandardCommand>true</hasStandardCommand>
+			    <defaultProjectile>RW_RedSpitProjectile</defaultProjectile>
+			
+			    <warmupTime>0.5</warmupTime>
+			    <defaultCooldownTime>2.0</defaultCooldownTime>
+			
+			    <burstShotCount>5</burstShotCount>
+                <ticksBetweenBurstShots>20</ticksBetweenBurstShots>
+			    <range>19.9</range>
+			
+                <soundCast>RW_LizardSpit</soundCast>
+			    <muzzleFlashScale>0</muzzleFlashScale>
+			    <label>red spit</label>
+            </li>
+        </verbs>
+    </ThingDef>
 </Defs>
