@@ -9,6 +9,8 @@ public class LizardSpitProjectile : Projectile
 
     protected override void Impact(Thing hitThing, bool blockedByShield = false)
     {
+        // TODO: Combat log entry
+        
         base.Impact(hitThing, blockedByShield);
 
         if (hitThing is not Pawn { health.hediffSet: not null } target || Props is not { } props) return;
