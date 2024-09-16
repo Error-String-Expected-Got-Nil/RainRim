@@ -18,6 +18,7 @@ public class PawnRenderNode_CreatureCosmetics : PawnRenderNode
     public Graphic CosmeticGraphic;
     public bool Colorize;
     public float OpacityFactor = 1f;
+    public float WhiteFlashFactor = 0f;
 
     public PawnRenderNode_CreatureCosmetics(Pawn pawn, PawnRenderNodeProperties props, PawnRenderTree tree)
         : base(pawn, props, tree)

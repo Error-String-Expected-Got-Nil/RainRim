@@ -14,9 +14,12 @@ public class PawnRenderNodeWorker_CreatureCosmetics : PawnRenderNodeWorker
     {
         if (GetGraphic(node, parms) == null) return null;
 
-        var matPropBlock = node.MatPropBlock;
-        var color = node.ColorFor(parms.pawn);
-        color.a *= ((PawnRenderNode_CreatureCosmetics)node).OpacityFactor;
+        if (node is not PawnRenderNode_CreatureCosmetics ccnode) return null;
+        
+        var matPropBlock = ccnode.MatPropBlock;
+        var color = ccnode.ColorFor(parms.pawn);
+        color.a *= ccnode.OpacityFactor;
+        color = Color.Lerp(color, Color.white, ccnode.WhiteFlashFactor);
         matPropBlock.SetColor(ShaderPropertyIDs.Color, color);
         
         return matPropBlock;

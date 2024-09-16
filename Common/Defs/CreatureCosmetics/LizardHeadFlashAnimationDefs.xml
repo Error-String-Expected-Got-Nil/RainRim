@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <RainRim.CreatureCosmetics.FlashAnimationDef>
+        <defName>RW_Flash_LizardHead_Test</defName>
+        <stages>
+            <li>
+                <duration>30</duration>
+                <smooth>false</smooth>
+            </li>
+            <li>
+                <duration>120</duration>
+                <minIntensity>0</minIntensity>
+            </li>
+        </stages>
+    </RainRim.CreatureCosmetics.FlashAnimationDef>
+</Defs>

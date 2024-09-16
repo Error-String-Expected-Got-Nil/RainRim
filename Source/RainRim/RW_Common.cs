@@ -44,5 +44,18 @@ public static class RW_Common
         public static SoundDef RW_LizardSpitSplatter;
         public static SoundDef RW_LizardTongueAttach;
         public static SoundDef RW_LizardTongueDetach;
+
+        public static SoundDef RW_LizardHeadDeflectAttack;
+    }
+
+    [DefOf]
+    public static class RW_PawnRenderNodeTagDefOf
+    {
+        static RW_PawnRenderNodeTagDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(RW_PawnRenderNodeTagDefOf));
+        }
+
+        public static PawnRenderNodeTagDef RW_LizardHead;
     }
 }
