@@ -2,6 +2,7 @@
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace RainRim.LizardTongueGrapple;
 
@@ -29,13 +30,16 @@ public class TongueDisarmProjectile : TongueGrappleProjectile
 
             var equipmentFlyer = (TongueRetractPawnFlyer)ThingFlyer.MakeThingFlyer(
                 RW_Common.RW_ThingDefOf.RW_LizardTongueRetractFlyer, dropped, thingDestinationPosition, 
-                thingInitialPosition);
+                thingInitialPosition, null, RW_Common.RW_SoundDefOf.RW_LizardTongueDetach);
             
             if (equipmentFlyer != null)
             {
                 equipmentFlyer.DestroyOnLand = false;
+                equipmentFlyer.DisableLandingEffects = false;
                 GenSpawn.Spawn(equipmentFlyer, lizard.Position, lizard.Map);
             }
+            
+            RW_Common.RW_SoundDefOf.RW_LizardTongueAttach.PlayOneShot(new TargetInfo(Position, Map));
         }
             
         // Always spawn tongue tip retract dummy, needed whether target was disarmed or not.

@@ -11,12 +11,13 @@ public class TongueRetractPawnFlyer : PawnFlyer
 {
     public ThingWithComps StemRoot;
     public bool DestroyOnLand = true;
+    public bool DisableLandingEffects = true;
 
     protected override void RespawnPawn()
     {
         var flyingThing = FlyingThing;
 
-        Patch_PawnFlyer.DisableLandingEffects = true;
+        if (DisableLandingEffects) Patch_PawnFlyer.DisableLandingEffects = true;
         base.RespawnPawn();
         Patch_PawnFlyer.DisableLandingEffects = false;
         

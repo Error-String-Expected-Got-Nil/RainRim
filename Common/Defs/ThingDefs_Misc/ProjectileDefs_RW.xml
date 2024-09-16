@@ -41,7 +41,8 @@
 		<graphicData>
 			<texPath>Things/Projectiles/RW_RedSpit</texPath>
 			<graphicClass>Graphic_Random</graphicClass>
-			<drawSize>0.5</drawSize>
+			<drawSize>0.45</drawSize>
+			<color>(0.9, 0.9, 0.9, 1)</color>
 		</graphicData>
 		<projectile>
 			<useGraphicClass>true</useGraphicClass>
@@ -49,6 +50,7 @@
 			<damageAmountBase>5</damageAmountBase>
 			<damageDef>Stun</damageDef>
 			<speed>20</speed>
+			<landedEffecter>RW_SpitFleckEffecter</landedEffecter>
 		</projectile>
 		<modExtensions>
 			<li Class="RainRim.LizardSpit.ModExtension_LizardSpitProps">

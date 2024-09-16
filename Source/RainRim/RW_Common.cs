@@ -31,4 +31,18 @@ public static class RW_Common
 
         public static HediffDef RW_LizardSpitHediff;
     }
+
+    [DefOf]
+    public static class RW_SoundDefOf
+    {
+        static RW_SoundDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(RW_SoundDefOf));
+        }
+
+        public static SoundDef RW_LizardSpit;
+        public static SoundDef RW_LizardSpitSplatter;
+        public static SoundDef RW_LizardTongueAttach;
+        public static SoundDef RW_LizardTongueDetach;
+    }
 }

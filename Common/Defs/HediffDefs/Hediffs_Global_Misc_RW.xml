@@ -3,12 +3,12 @@
     <HediffDef>
         <defName>RW_LizardSpitHediff</defName>
         <label>lizard spit</label>
-        <description>A coating of adhesive spit from a giant lizard. It will rapidly dry and fall off, but also limit motion of any kind until then.</description>
+        <description>A coating of adhesive spit from a giant lizard. It will rapidly dry and fall off, but motion of any kind will be limited until then.</description>
         <hediffClass>HediffWithComps</hediffClass>
         <maxSeverity>1</maxSeverity>
         <comps>
             <li Class="HediffCompProperties_SeverityPerSecond">
-                <severityPerSecond>-0.1</severityPerSecond>
+                <severityPerSecond>-0.15</severityPerSecond>
             </li>
         </comps>
         <stages>

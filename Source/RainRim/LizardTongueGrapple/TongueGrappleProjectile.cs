@@ -3,6 +3,7 @@ using RainUtils.Utils;
 using RimWorld;
 using UnityEngine;
 using Verse;
+using Verse.Sound;
 
 namespace RainRim.LizardTongueGrapple;
 
@@ -50,6 +51,8 @@ public class TongueGrappleProjectile : Projectile
 
         if (hitThing is Pawn target && launcher is Pawn lizard && CanGrappleTarget(lizard, target))
         {
+            RW_Common.RW_SoundDefOf.RW_LizardTongueAttach.PlayOneShot(new TargetInfo(Position, Map));
+            
             base.Impact(hitThing, blockedByShield);
             
             var map = target.Map;
@@ -58,7 +61,7 @@ public class TongueGrappleProjectile : Projectile
 
             var pawnFlyer = (TongueGrapplePawnFlyer)PawnFlyer.MakeFlyer(
                 RW_Common.RW_ThingDefOf.RW_LizardTongueGrappleFlyer,
-                target, destinationPos, null, null);
+                target, destinationPos, null, RW_Common.RW_SoundDefOf.RW_LizardTongueDetach);
 
             if (pawnFlyer == null) return;
 
