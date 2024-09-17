@@ -1,4 +1,5 @@
-﻿using RimWorld;
+﻿using RainRim.CreatureCosmetics;
+using RimWorld;
 using Verse;
 
 // ReSharper disable InconsistentNaming
@@ -57,5 +58,16 @@ public static class RW_Common
         }
 
         public static PawnRenderNodeTagDef RW_LizardHead;
+    }
+
+    [DefOf]
+    public static class RW_FlashAnimationDefOf
+    {
+        static RW_FlashAnimationDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(RW_FlashAnimationDefOf));
+        }
+
+        public static FlashAnimationDef RW_Flash_LizardHead_Test;
     }
 }

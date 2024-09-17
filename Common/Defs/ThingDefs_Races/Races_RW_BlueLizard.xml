@@ -64,6 +64,8 @@
 					<litCurve>0.1</litCurve>
 				</gradientPalette>
 			</li>
+
+			<li Class="RainRim.CreatureCosmetics.CompProperties_LizardMoodHandler" />
 		</comps>
 		
 		<race>

@@ -4,11 +4,12 @@
         <defName>RW_Flash_LizardHead_Test</defName>
         <stages>
             <li>
-                <duration>30</duration>
+                <duration>20</duration>
                 <smooth>false</smooth>
             </li>
             <li>
-                <duration>120</duration>
+                <duration>60</duration>
+                <period>60</period>
                 <minIntensity>0</minIntensity>
             </li>
         </stages>

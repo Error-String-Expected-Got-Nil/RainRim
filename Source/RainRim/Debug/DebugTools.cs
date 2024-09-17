@@ -51,4 +51,18 @@ public static class DebugTools
         colorComp.LitFactor = lf;
         colorComp.Color = newColor;
     }
+
+    [DebugAction("RainRim", "Test lizard white flash", actionType = DebugActionType.ToolMapForPawns, 
+        allowedGameStates = AllowedGameStates.PlayingOnMap)]
+    public static void TestLizardHeadFlash(Pawn lizard)
+    {
+        if (lizard.GetComp<ThingComp_LizardMoodHandler>() is not { } comp)
+        {
+            Log.Message("Pawn " + lizard.LabelShort + " did not have LizardMoodHandler");
+            return;
+        }
+
+        comp.WhiteFlashAnimator = RW_Common.RW_FlashAnimationDefOf.RW_Flash_LizardHead_Test.GetAnimator();
+        comp.CompTick();
+    }
 }

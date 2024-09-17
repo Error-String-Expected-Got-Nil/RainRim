@@ -34,28 +34,17 @@ public class FlashAnimator : IExposable
         if (stages[0].phase > 0) _fallingPeriod = false;
     }
 
-    public float Tick()
+    public float PeekTick()
     {
-        if (Finished) return 0f;
+        var intensity = Peek();
+        Tick();
+        return intensity;
+    }
 
+    public void Tick()
+    {
         var stage = Stages[_stageIndex];
-        var stageProgress = (float)_stageStopwatch / stage.duration;
-        var periodProgress = (float)_periodStopwatch / stage.period;
-
-        var maxIntensity = stage.maxIntensity * Mathf.Lerp(1f, stage.fadeFactor, stageProgress);
-        var minIntensity = stage.minIntensity;
-
-        float curIntensity;
-
-        if (_fallingPeriod)
-            curIntensity = stage.smooth 
-                ? Mathf.SmoothStep(maxIntensity, minIntensity, periodProgress) 
-                : maxIntensity;
-        else 
-            curIntensity = stage.smooth 
-                ? Mathf.SmoothStep(minIntensity, maxIntensity, periodProgress) 
-                : minIntensity;
-
+        
         _periodStopwatch++;
         if (_periodStopwatch > stage.period)
         {
@@ -80,7 +69,30 @@ public class FlashAnimator : IExposable
                 if (stage.phase > 0) _fallingPeriod = false;
             }
         }
+    }
 
+    public float Peek()
+    {
+        if (Finished) return 0f;
+
+        var stage = Stages[_stageIndex];
+        var stageProgress = (float)_stageStopwatch / stage.duration;
+        var periodProgress = (float)_periodStopwatch / stage.period;
+
+        var maxIntensity = stage.maxIntensity * Mathf.Lerp(1f, stage.fadeFactor, stageProgress);
+        var minIntensity = stage.minIntensity;
+
+        float curIntensity;
+
+        if (_fallingPeriod)
+            curIntensity = stage.smooth 
+                ? Mathf.SmoothStep(maxIntensity, minIntensity, periodProgress) 
+                : maxIntensity;
+        else 
+            curIntensity = stage.smooth 
+                ? Mathf.SmoothStep(minIntensity, maxIntensity, periodProgress) 
+                : minIntensity;
+        
         return curIntensity * IntensityFactor;
     }
 
@@ -140,7 +152,7 @@ public class FlashAnimationStage : IExposable
         Scribe_Values.Look(ref minIntensity, nameof(minIntensity), 1f);
         Scribe_Values.Look(ref fadeFactor, nameof(fadeFactor), 1f);
         Scribe_Values.Look(ref duration, nameof(duration), 60);
-        Scribe_Values.Look(ref period, nameof(period), 60);
+        Scribe_Values.Look(ref period, nameof(period), duration);
         Scribe_Values.Look(ref phase, nameof(phase));
         Scribe_Values.Look(ref smooth, nameof(smooth), true);
     }
