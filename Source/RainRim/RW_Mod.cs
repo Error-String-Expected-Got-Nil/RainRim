@@ -18,9 +18,8 @@ public class RW_Mod : Mod
     {
         var list = new Listing_Standard();
         list.Begin(inRect);
-
-        Check("RW_Settings_EnableStrobeEffects", ref Settings.EnableStrobeEffects, 
-            "RW_Settings_EnableStrobeEffects_Tooltip");
+        
+        // TEMP; Fill with settings if/when any are needed
         
         list.End();
         
@@ -39,12 +38,5 @@ public class RW_Mod : Mod
 
 public class RW_Settings : ModSettings
 {
-    public bool EnableStrobeEffects = true;
     
-    public override void ExposeData()
-    {
-        base.ExposeData();
-        
-        Scribe_Values.Look(ref EnableStrobeEffects, nameof(EnableStrobeEffects), true);
-    }
 }

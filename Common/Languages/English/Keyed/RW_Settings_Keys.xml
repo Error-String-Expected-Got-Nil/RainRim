@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
     <RW_Settings_Category>RainRim</RW_Settings_Category>
-
-    <RW_Settings_EnableStrobeEffects>Enable strobe effects</RW_Settings_EnableStrobeEffects>
-    <RW_Settings_EnableStrobeEffects_Tooltip>Enable visual effects involving rapid flickering or flashing, such as when a lizard's head armor blocks an attack. Effects will be replaced by calmer variants.</RW_Settings_EnableStrobeEffects_Tooltip>
 </LanguageData>
