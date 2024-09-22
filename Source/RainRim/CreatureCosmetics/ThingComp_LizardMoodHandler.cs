@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
 using HarmonyLib;
+using RainUtils.Cosmetics;
 using RainUtils.LocalArmor;
 using Verse;
 

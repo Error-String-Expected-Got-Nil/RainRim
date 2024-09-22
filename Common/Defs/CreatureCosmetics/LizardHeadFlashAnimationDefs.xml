@@ -4,6 +4,34 @@
         <defName>RW_Flash_LizardHead_Test</defName>
         <stages>
             <li>
+                <duration>8</duration>
+                <minIntensity>1</minIntensity>
+                <maxIntensity>0</maxIntensity>
+            </li>
+            <li>
+                <duration>6</duration>
+                <smooth>false</smooth>
+            </li>
+            <li>
+                <duration>36</duration>
+                <period>2</period>
+                <minIntensity>0</minIntensity>
+                <fadeFactor>0.67</fadeFactor>
+                <smooth>false</smooth>
+            </li>
+            <li>
+                <duration>12</duration>
+                <period>12</period>
+                <maxIntensity>0.67</maxIntensity>
+                <minIntensity>0</minIntensity>
+            </li>
+        </stages>
+    </RainRim.CreatureCosmetics.FlashAnimationDef>
+
+    <RainRim.CreatureCosmetics.FlashAnimationDef>
+        <defName>RW_Flash_LizardHead_Test2</defName>
+        <stages>
+            <li>
                 <duration>20</duration>
                 <smooth>false</smooth>
             </li>

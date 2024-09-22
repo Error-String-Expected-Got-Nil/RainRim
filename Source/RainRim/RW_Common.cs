@@ -1,4 +1,4 @@
-﻿using RainRim.CreatureCosmetics;
+﻿using RainUtils.Cosmetics;
 using RimWorld;
 using Verse;
 
