@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
     <RW_Settings_Category>RainRim</RW_Settings_Category>
+
+    <RW_Settings_RainbowMode>Rainbow Mode</RW_Settings_RainbowMode>
+    <RW_Settings_RainbowMode_Tooltip>Give the lizards some *flair!* Let them show off, sparkle, and shine like they deserve to!</RW_Settings_RainbowMode_Tooltip>
 </LanguageData>

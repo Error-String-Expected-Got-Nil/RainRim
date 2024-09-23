@@ -18,10 +18,15 @@ public class ThingComp_RandomColorPicker : ThingComp
     public float HueFactor;
     public float SatFactor;
     public float LitFactor;
+    public float RainbowModeOffset;
+    public float RainbowModeSpeedFactor;
     
     public override void Initialize(CompProperties properties)
     {
         props = properties;
+
+        RainbowModeOffset = Random.value;
+        RainbowModeSpeedFactor = Random.Range(0.8f, 1.2f);
 
         if (Scribe.mode == LoadSaveMode.LoadingVars) return;
 

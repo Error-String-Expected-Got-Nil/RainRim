@@ -19,7 +19,7 @@ public class RW_Mod : Mod
         var list = new Listing_Standard();
         list.Begin(inRect);
         
-        // TEMP; Fill with settings if/when any are needed
+        Check("RW_Settings_RainbowMode", ref Settings.RainbowMode, "RW_Settings_RainbowMode_Tooltip");
         
         list.End();
         
@@ -38,5 +38,12 @@ public class RW_Mod : Mod
 
 public class RW_Settings : ModSettings
 {
-    
+    public bool RainbowMode;
+
+    public override void ExposeData()
+    {
+        base.ExposeData();
+        
+        Scribe_Values.Look(ref RainbowMode, nameof(RainbowMode));
+    }
 }
