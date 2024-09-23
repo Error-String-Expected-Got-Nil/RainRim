@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <RainRim.CreatureCosmetics.FlashAnimationDef>
-        <defName>RW_Flash_LizardHead_Test</defName>
+    <RainUtils.Cosmetics.FlashAnimationDef>
+        <defName>RW_Flash_Lizard_HeadArmorAbsorb_White</defName>
         <stages>
-            <li>
-                <duration>8</duration>
-                <minIntensity>1</minIntensity>
-                <maxIntensity>0</maxIntensity>
-            </li>
             <li>
                 <duration>6</duration>
                 <smooth>false</smooth>
             </li>
             <li>
-                <duration>36</duration>
+                <duration>32</duration>
                 <period>2</period>
                 <minIntensity>0</minIntensity>
                 <fadeFactor>0.67</fadeFactor>
@@ -21,25 +16,26 @@
             </li>
             <li>
                 <duration>12</duration>
-                <period>12</period>
                 <maxIntensity>0.67</maxIntensity>
                 <minIntensity>0</minIntensity>
             </li>
         </stages>
-    </RainRim.CreatureCosmetics.FlashAnimationDef>
+    </RainUtils.Cosmetics.FlashAnimationDef>
 
-    <RainRim.CreatureCosmetics.FlashAnimationDef>
-        <defName>RW_Flash_LizardHead_Test2</defName>
+    <RainUtils.Cosmetics.FlashAnimationDef>
+        <defName>RW_Flash_Lizard_HeadArmorAbsorb_Color</defName>
         <stages>
             <li>
-                <duration>20</duration>
+                <duration>38</duration>
+                <maxIntensity>0</maxIntensity>
+                <minIntensity>0</minIntensity>
                 <smooth>false</smooth>
             </li>
             <li>
-                <duration>60</duration>
-                <period>60</period>
-                <minIntensity>0</minIntensity>
+                <duration>12</duration>
+                <maxIntensity>0</maxIntensity>
+                <minIntensity>1</minIntensity>
             </li>
         </stages>
-    </RainRim.CreatureCosmetics.FlashAnimationDef>
+    </RainUtils.Cosmetics.FlashAnimationDef>
 </Defs>

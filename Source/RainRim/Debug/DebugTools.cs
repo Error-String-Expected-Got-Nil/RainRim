@@ -1,5 +1,7 @@
 ﻿using LudeonTK;
 using RainRim.CreatureCosmetics;
+using RainUtils.Utils;
+using RimWorld;
 using Verse;
 using Random = UnityEngine.Random;
 
@@ -52,7 +54,7 @@ public static class DebugTools
         colorComp.Color = newColor;
     }
 
-    [DebugAction("RainRim", "Test lizard white flash", actionType = DebugActionType.ToolMapForPawns, 
+    [DebugAction("RainRim", "Test lizard head flash", actionType = DebugActionType.ToolMapForPawns, 
         allowedGameStates = AllowedGameStates.PlayingOnMap)]
     public static void TestLizardHeadFlash(Pawn lizard)
     {
@@ -61,8 +63,10 @@ public static class DebugTools
             Log.Message("Pawn " + lizard.LabelShort + " did not have LizardMoodHandler");
             return;
         }
-
-        comp.WhiteFlashAnimator = RW_Common.RW_FlashAnimationDefOf.RW_Flash_LizardHead_Test.GetAnimator();
-        comp.CompTick();
+        
+        lizard.Drawer.GetJitterer().AddOffset(0.1f, Rand.Range(0, 360));
+        lizard.stances.stagger.StaggerFor(95);
+        comp.LocalArmorCallback(18f, 9f, 0f, DamageDefOf.Bullet, 
+            DamageDefOf.Blunt, lizard, false, null);
     }
 }

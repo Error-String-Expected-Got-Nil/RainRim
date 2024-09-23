@@ -68,6 +68,7 @@ public static class RW_Common
             DefOfHelper.EnsureInitializedInCtor(typeof(RW_FlashAnimationDefOf));
         }
 
-        public static FlashAnimationDef RW_Flash_LizardHead_Test;
+        public static FlashAnimationDef RW_Flash_Lizard_HeadArmorAbsorb_White;
+        public static FlashAnimationDef RW_Flash_Lizard_HeadArmorAbsorb_Color;
     }
 }

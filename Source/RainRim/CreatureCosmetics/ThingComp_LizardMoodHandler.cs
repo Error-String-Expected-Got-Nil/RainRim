@@ -4,6 +4,7 @@ using HarmonyLib;
 using RainUtils.Cosmetics;
 using RainUtils.LocalArmor;
 using Verse;
+using Verse.Sound;
 
 namespace RainRim.CreatureCosmetics;
 
@@ -27,6 +28,7 @@ public class ThingComp_LizardMoodHandler : ThingComp, ILocalArmorCallback
     public Pawn ParentPawn => (Pawn)parent;
 
     public FlashAnimator WhiteFlashAnimator;
+    public FlashAnimator ColorFlashAnimator;
     
     public override void Initialize(CompProperties properties)
     {
@@ -38,12 +40,24 @@ public class ThingComp_LizardMoodHandler : ThingComp, ILocalArmorCallback
 
     public override void CompTick()
     {
-        if (WhiteFlashAnimator == null) { }
-        else if (WhiteFlashAnimator.Finished)
-            WhiteFlashAnimator = null;
-        else
+        if (WhiteFlashAnimator != null)
         {
             WhiteFlashAnimator.Tick();
+
+            if (WhiteFlashAnimator.Finished)
+                WhiteFlashAnimator = null;
+                
+            _graphicsUpToDate = false;
+        }
+        
+        if (ColorFlashAnimator == null) { }
+        else
+        {
+            ColorFlashAnimator.Tick();
+
+            if (ColorFlashAnimator.Finished)
+                ColorFlashAnimator = null;
+            
             _graphicsUpToDate = false;
         }
     }
@@ -57,13 +71,26 @@ public class ThingComp_LizardMoodHandler : ThingComp, ILocalArmorCallback
         
         _graphicsUpToDate = true;
 
-        if (WhiteFlashAnimator != null) headNode.WhiteFlashFactor = WhiteFlashAnimator.Peek();
+        headNode.WhiteFlashFactor = WhiteFlashAnimator?.Peek() ?? 0f;
+        headNode.OpacityFactor = ColorFlashAnimator?.Peek() ?? 1f;
+    }
+
+    private void InterruptCurrentAnimation()
+    {
+        WhiteFlashAnimator = null;
+        ColorFlashAnimator = null;
+        _graphicsUpToDate = false;
     }
     
     public void LocalArmorCallback(float preArmorDamage, float postArmorDamage, float armorPen, DamageDef preArmorDef,
         DamageDef postArmorDef, Pawn pawn, bool metalArmor, BodyPartRecord part)
     {
+        if (!(postArmorDamage < preArmorDamage)) return;
         
+        InterruptCurrentAnimation();
+        WhiteFlashAnimator = RW_Common.RW_FlashAnimationDefOf.RW_Flash_Lizard_HeadArmorAbsorb_White.GetAnimator();
+        ColorFlashAnimator = RW_Common.RW_FlashAnimationDefOf.RW_Flash_Lizard_HeadArmorAbsorb_Color.GetAnimator();
+        RW_Common.RW_SoundDefOf.RW_LizardHeadDeflectAttack.PlayOneShot(ParentPawn);
     }
 
     public override void PostExposeData()
@@ -71,6 +98,7 @@ public class ThingComp_LizardMoodHandler : ThingComp, ILocalArmorCallback
         base.PostExposeData();
 
         Scribe_Deep.Look(ref WhiteFlashAnimator, nameof(WhiteFlashAnimator));
+        Scribe_Deep.Look(ref ColorFlashAnimator, nameof(ColorFlashAnimator));
     }
 }
 
@@ -88,4 +116,11 @@ public class CompProperties_LizardMoodHandler : CompProperties
         if (parentDef.thingClass != typeof(Pawn)) 
             yield return parentDef.defName + " has LizardMoodHandler but is not a Pawn";
     }
+}
+
+public enum LizardMood
+{
+    Idle,
+    Aggressive,
+    Scared
 }
