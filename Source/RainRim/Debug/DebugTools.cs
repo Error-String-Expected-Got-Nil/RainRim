@@ -69,4 +69,24 @@ public static class DebugTools
         comp.LocalArmorCallback(18f, 9f, 0f, DamageDefOf.Bullet, 
             DamageDefOf.Blunt, lizard, false, null);
     }
+
+    [DebugAction("RainRim", "Test lizard bubbles", actionType = DebugActionType.ToolMapForPawns,
+        allowedGameStates = AllowedGameStates.PlayingOnMap)]
+    public static void TestLizardBubbles(Pawn lizard)
+    {
+        if (lizard.GetComp<ThingComp_LizardMoodHandler>() is not { } comp)
+        {
+            Log.Message("Pawn " + lizard.LabelShort + " did not have LizardMoodHandler");
+            return;
+        }
+
+        if (lizard.Rotation == Rot4.North)
+            RW_Common.RW_EffecterDefOf.RW_LizardBubblesNorth.Spawn().Trigger(lizard, TargetInfo.Invalid);
+        else if (lizard.Rotation == Rot4.East)
+            RW_Common.RW_EffecterDefOf.RW_LizardBubblesEast.Spawn().Trigger(lizard, TargetInfo.Invalid);
+        else if (lizard.Rotation == Rot4.South)
+            RW_Common.RW_EffecterDefOf.RW_LizardBubblesSouth.Spawn().Trigger(lizard, TargetInfo.Invalid);
+        else if (lizard.Rotation == Rot4.West)
+            RW_Common.RW_EffecterDefOf.RW_LizardBubblesWest.Spawn().Trigger(lizard, TargetInfo.Invalid);
+    }
 }

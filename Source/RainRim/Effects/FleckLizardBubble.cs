@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using RainRim.CreatureCosmetics;
+using RainRim.Utils;
+using UnityEngine;
 using Verse;
 
 namespace RainRim.Effects;
@@ -19,17 +21,24 @@ public struct FleckLizardBubble : IFleck
     public Vector3 Scale;
     public int SetupTick;
     public Vector3 SpawnPosition;
+    public ThingComp_LizardMoodHandler SourceMoodHandler;
     
     public void Setup(FleckCreationData creationData)
     {
         var angleRad = creationData.velocityAngle * Mathf.Deg2Rad;
+        var spawnPos = creationData.spawnPosition;
+        if (creationData.link is { Linked: true, Target: { HasThing: true, Thing: Pawn lizard } })
+        {
+            SourceMoodHandler = lizard.GetComp<ThingComp_LizardMoodHandler>();
+            spawnPos = EffectUtils.GetHeadOffset(lizard);
+        }
         
         Def = creationData.def;
         Life = 1f;
         // For authenticity, this is basically how Rain World determines lizard bubble lifetime.
         Lifetime = 0.5f + 5f * Random.value * Random.value * Random.value * Random.value;
         TurnStopwatch = 0f;
-        Position = creationData.spawnPosition;
+        Position = spawnPos;
         Velocity = creationData.velocity 
                    ?? new Vector3(Mathf.Cos(angleRad), 0f, Mathf.Sin(angleRad)) * creationData.velocitySpeed;
         ScaleFactor = 0.5f;
@@ -65,7 +74,7 @@ public struct FleckLizardBubble : IFleck
         ((Graphic_Fleck)Def.GetGraphicData(id).Graphic).DrawFleck(new FleckDrawData
         {
             alpha = 1f,
-            color = Color.black,
+            color = SourceMoodHandler?.LastHeadColor ?? Color.black,
             drawLayer = 0,
             pos = Position,
             rotation = 0f,

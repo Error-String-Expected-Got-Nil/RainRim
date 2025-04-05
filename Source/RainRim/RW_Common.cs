@@ -71,4 +71,18 @@ public static class RW_Common
         public static FlashAnimationDef RW_Flash_Lizard_HeadArmorAbsorb_White;
         public static FlashAnimationDef RW_Flash_Lizard_HeadArmorAbsorb_Color;
     }
+
+    [DefOf]
+    public static class RW_EffecterDefOf
+    {
+        static RW_EffecterDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(RW_EffecterDefOf));
+        }
+
+        public static EffecterDef RW_LizardBubblesNorth;
+        public static EffecterDef RW_LizardBubblesEast;
+        public static EffecterDef RW_LizardBubblesSouth;
+        public static EffecterDef RW_LizardBubblesWest;
+    }
 }

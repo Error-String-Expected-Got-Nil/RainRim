@@ -23,9 +23,7 @@ public class PawnRenderNodeWorker_CreatureCosmetics : PawnRenderNodeWorker
 
         if (RW_Mod.Settings.RainbowMode && parms.pawn.GetComp<ThingComp_RandomColorPicker>() is { } colorComp)
         {
-            var coeff = (float)GenTicks.TicksGame / 120 * colorComp.RainbowModeSpeedFactor;
-            var hue = ((Mathf.Sin(coeff * Mathf.PI) + 1) / 2f + colorComp.RainbowModeOffset) % 1f;
-            color = ColorUtils.HSL2RGB(hue, 0.9f, 0.5f);
+            color = colorComp.RainbowColor;
         }
         else
         {

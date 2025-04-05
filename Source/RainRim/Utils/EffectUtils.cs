@@ -37,4 +37,6 @@ public static class EffectUtils
             : pawn.RaceProps.headPosPerRotation.NullOrEmpty() 
                 ? GenericAnimalHeadOffsets[pawn.Rotation.AsInt] 
                 : pawn.RaceProps.headPosPerRotation[pawn.Rotation.AsInt];
+    
+    public static Vector3 GetHeadOffset(Pawn pawn) => TransformVectorByPawn(GetBaseHeadOffset(pawn), pawn);
 }

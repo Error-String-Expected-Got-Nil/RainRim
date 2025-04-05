@@ -25,5 +25,6 @@
         </graphicData>
         <altitudeLayer>MoteOverhead</altitudeLayer>
         <solidTime>60</solidTime> <!-- Lifetime is handled in C# code -->
+        <useAttachLink>true</useAttachLink>
     </FleckDef>
 </Defs>

@@ -21,7 +21,7 @@ public class ThingComp_RenderOnHead : ThingComp
     public override void PostDraw()
     {
         if (parent is not Pawn pawn || parent.DrawPosHeld is not { } drawPos) return;
-        var headOffset = EffectUtils.TransformVectorByPawn(EffectUtils.GetBaseHeadOffset(pawn), pawn);
+        var headOffset = EffectUtils.GetHeadOffset(pawn);
         
         RenderGraphic.DrawWorker((drawPos + headOffset).WithY(pawn.def.Altitude + Altitudes.AltInc), Rot4.North,
             null, null, 0f);

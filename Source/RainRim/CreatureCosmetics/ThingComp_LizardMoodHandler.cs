@@ -3,6 +3,7 @@ using System.Reflection;
 using HarmonyLib;
 using RainUtils.Cosmetics;
 using RainUtils.LocalArmor;
+using UnityEngine;
 using Verse;
 using Verse.Sound;
 
@@ -20,6 +21,7 @@ public class ThingComp_LizardMoodHandler : ThingComp, ILocalArmorCallback
 
     private bool _graphicsUpToDate = false;
     private Dictionary<PawnRenderNodeTagDef, PawnRenderNode> _nodesByTag;
+    private ThingComp_RandomColorPicker _colorComp;
     
     private PawnRenderNode_CreatureCosmetics HeadNode => (PawnRenderNode_CreatureCosmetics)_nodesByTag
         .TryGetValue(RW_Common.RW_PawnRenderNodeTagDefOf.RW_LizardHead);
@@ -29,6 +31,7 @@ public class ThingComp_LizardMoodHandler : ThingComp, ILocalArmorCallback
 
     public FlashAnimator WhiteFlashAnimator;
     public FlashAnimator ColorFlashAnimator;
+    public Color LastHeadColor = Color.black;
     
     public override void Initialize(CompProperties properties)
     {
@@ -36,6 +39,7 @@ public class ThingComp_LizardMoodHandler : ThingComp, ILocalArmorCallback
         
         _nodesByTag = (Dictionary<PawnRenderNodeTagDef, PawnRenderNode>)PawnRenderTree_NodesByTag_Info
             .GetValue(ParentPawn.Drawer.renderer.renderTree);
+        _colorComp = ParentPawn.GetComp<ThingComp_RandomColorPicker>();
     }
 
     public override void CompTick()
@@ -71,8 +75,16 @@ public class ThingComp_LizardMoodHandler : ThingComp, ILocalArmorCallback
         
         _graphicsUpToDate = true;
 
-        headNode.WhiteFlashFactor = WhiteFlashAnimator?.Peek() ?? 0f;
-        headNode.OpacityFactor = ColorFlashAnimator?.Peek() ?? 1f;
+        var whiteFlashFactor = WhiteFlashAnimator?.Peek() ?? 0f;
+        var colorFlashFactor = ColorFlashAnimator?.Peek() ?? 1f;
+
+        headNode.WhiteFlashFactor = whiteFlashFactor;
+        headNode.OpacityFactor = colorFlashFactor;
+
+        LastHeadColor = RW_Mod.Settings.RainbowMode
+            ? _colorComp.RainbowColor
+            : Color.Lerp(Color.Lerp(_colorComp.Color, Color.black, colorFlashFactor), Color.white, 
+                whiteFlashFactor);
     }
 
     private void InterruptCurrentAnimation()

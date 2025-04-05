@@ -20,6 +20,7 @@ public class ThingComp_RandomColorPicker : ThingComp
     public float LitFactor;
     public float RainbowModeOffset;
     public float RainbowModeSpeedFactor;
+    public Color RainbowColor;
     
     public override void Initialize(CompProperties properties)
     {
@@ -35,6 +36,16 @@ public class ThingComp_RandomColorPicker : ThingComp
         LitFactor = Random.value;
 
         Color = Props.gradientPalette.PickColor(HueFactor, SatFactor, LitFactor);
+    }
+
+    public override void CompTick()
+    {
+        if (RW_Mod.Settings.RainbowMode)
+        {
+            var coeff = (float)GenTicks.TicksGame / 120 * RainbowModeSpeedFactor;
+            var hue = ((Mathf.Sin(coeff * Mathf.PI) + 1) / 2f + RainbowModeOffset) % 1f;
+            RainbowColor = ColorUtils.HSL2RGB(hue, 0.9f, 0.5f);
+        }
     }
 
     public override void PostExposeData()
