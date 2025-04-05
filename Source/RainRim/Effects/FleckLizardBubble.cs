@@ -22,13 +22,16 @@ public struct FleckLizardBubble : IFleck
     
     public void Setup(FleckCreationData creationData)
     {
+        var angleRad = creationData.velocityAngle * Mathf.Deg2Rad;
+        
         Def = creationData.def;
         Life = 1f;
         // For authenticity, this is basically how Rain World determines lizard bubble lifetime.
         Lifetime = 0.5f + 5f * Random.value * Random.value * Random.value * Random.value;
         TurnStopwatch = 0f;
         Position = creationData.spawnPosition;
-        Velocity = creationData.velocity ?? new Vector3(0.0f, 0.0f, 0.5f);
+        Velocity = creationData.velocity 
+                   ?? new Vector3(Mathf.Cos(angleRad), 0f, Mathf.Sin(angleRad)) * creationData.velocitySpeed;
         ScaleFactor = 0.5f;
         Scale = new Vector3(creationData.scale, creationData.scale, creationData.scale);
         SetupTick = Find.TickManager.TicksGame;

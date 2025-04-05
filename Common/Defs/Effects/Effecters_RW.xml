@@ -22,11 +22,13 @@
         <children>
             <li>
                 <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
-                <positionRadius>0.4</positionRadius>
+                <positionRadius>0.2</positionRadius>
                 <fleckDef>RW_LizardBubbleFleck</fleckDef>
                 <burstCount>7~12</burstCount>
-                <speed>0.3~0.45</speed>
+                <speed>0.45~0.6</speed>
                 <scale>0.2~0.3</scale>
+                <angle>30~150</angle>
+                <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
             </li>
         </children>
     </EffecterDef>
