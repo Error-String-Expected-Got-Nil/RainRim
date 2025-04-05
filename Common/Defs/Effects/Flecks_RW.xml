@@ -13,4 +13,17 @@
         <solidTime>0.1</solidTime>
         <fadeOutTime>0.2</fadeOutTime>
     </FleckDef>
+
+    <FleckDef ParentName="FleckBase">
+        <defName>RW_LizardBubbleFleck</defName>
+        <fleckSystemClass>RainRim.Effects.FleckSystemLizardBubble</fleckSystemClass>
+        <graphicData>
+            <texPath>Things/Mote/RW_WhiteCircle</texPath>
+            <shaderType>Mote</shaderType>
+            <renderInstanced>true</renderInstanced>
+            <color>(1, 1, 1, 1)</color>
+        </graphicData>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <solidTime>60</solidTime> <!-- Lifetime is handled in C# code -->
+    </FleckDef>
 </Defs>

@@ -15,4 +15,19 @@
             </li>
         </children>
     </EffecterDef>
+
+    <!-- Debug test effecter for the lizard bubbles -->
+    <EffecterDef>
+        <defName>RW_LizardBubbleTestEffecter</defName>
+        <children>
+            <li>
+                <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+                <positionRadius>0.4</positionRadius>
+                <fleckDef>RW_LizardBubbleFleck</fleckDef>
+                <burstCount>7~12</burstCount>
+                <speed>0.3~0.45</speed>
+                <scale>0.2~0.3</scale>
+            </li>
+        </children>
+    </EffecterDef>
 </Defs>
