@@ -18,7 +18,7 @@ public class ThingComp_TongueStemDrawer : ThingComp
         => parent.DrawPosHeld is { } drawPos
             ? drawPos + (
                 parent is Pawn parentPawn 
-                    ? MathUtils.TransformVectorByPawn(MathUtils.GetBaseHeadOffset(parentPawn), parentPawn) 
+                    ? EffectUtils.TransformVectorByPawn(EffectUtils.GetBaseHeadOffset(parentPawn), parentPawn) 
                     : new Vector3(0f, 0f, 0f)
                 )
             : null;

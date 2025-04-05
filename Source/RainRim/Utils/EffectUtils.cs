@@ -4,7 +4,7 @@ using Verse;
 
 namespace RainRim.Utils;
 
-public static class MathUtils
+public static class EffectUtils
 {
     // Default head offsets for animals if their RaceProps don't define them explicitly
     private static readonly List<Vector3> GenericAnimalHeadOffsets = new()
