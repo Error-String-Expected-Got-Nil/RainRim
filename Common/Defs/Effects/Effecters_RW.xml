@@ -17,65 +17,19 @@
     </EffecterDef>
 
     <EffecterDef>
-        <defName>RW_LizardBubblesNorth</defName>
+        <defName>RW_LizardBubbles</defName>
         <children>
             <li>
                 <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+                <spawnLocType>OnSource</spawnLocType>
                 <positionRadius>0.2</positionRadius>
                 <fleckDef>RW_LizardBubbleFleck</fleckDef>
                 <burstCount>7~12</burstCount>
-                <speed>0.45~0.6</speed>
+                <speed>0.55~0.75</speed>
                 <scale>0.2~0.3</scale>
-                <angle>30~150</angle>
+                <angle>-60~60</angle>
                 <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
-            </li>
-        </children>
-    </EffecterDef>
-
-    <EffecterDef>
-        <defName>RW_LizardBubblesEast</defName>
-        <children>
-            <li>
-                <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
-                <positionRadius>0.2</positionRadius>
-                <fleckDef>RW_LizardBubbleFleck</fleckDef>
-                <burstCount>7~12</burstCount>
-                <speed>0.45~0.6</speed>
-                <scale>0.2~0.3</scale>
-                <angle>0~120</angle>
-                <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
-            </li>
-        </children>
-    </EffecterDef>
-
-    <EffecterDef>
-        <defName>RW_LizardBubblesSouth</defName>
-        <children>
-            <li>
-                <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
-                <positionRadius>0.2</positionRadius>
-                <fleckDef>RW_LizardBubbleFleck</fleckDef>
-                <burstCount>7~12</burstCount>
-                <speed>0.45~0.6</speed>
-                <scale>0.2~0.3</scale>
-                <angle>210~330</angle>
-                <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
-            </li>
-        </children>
-    </EffecterDef>
-
-    <EffecterDef>
-        <defName>RW_LizardBubblesWest</defName>
-        <children>
-            <li>
-                <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
-                <positionRadius>0.2</positionRadius>
-                <fleckDef>RW_LizardBubbleFleck</fleckDef>
-                <burstCount>7~12</burstCount>
-                <speed>0.45~0.6</speed>
-                <scale>0.2~0.3</scale>
-                <angle>60~180</angle>
-                <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+                <useTargetAInitialRotation>true</useTargetAInitialRotation>
             </li>
         </children>
     </EffecterDef>

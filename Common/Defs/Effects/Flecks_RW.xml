@@ -19,7 +19,7 @@
         <fleckSystemClass>RainRim.Effects.FleckSystemLizardBubble</fleckSystemClass>
         <graphicData>
             <texPath>Things/Mote/RW_WhiteCircle</texPath>
-            <shaderType>Mote</shaderType>
+            <shaderType>TransparentPostLight</shaderType>
             <renderInstanced>true</renderInstanced>
             <color>(1, 1, 1, 1)</color>
         </graphicData>

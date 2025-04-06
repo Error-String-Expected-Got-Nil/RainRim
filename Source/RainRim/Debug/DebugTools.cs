@@ -80,13 +80,7 @@ public static class DebugTools
             return;
         }
 
-        if (lizard.Rotation == Rot4.North)
-            RW_Common.RW_EffecterDefOf.RW_LizardBubblesNorth.Spawn().Trigger(lizard, TargetInfo.Invalid);
-        else if (lizard.Rotation == Rot4.East)
-            RW_Common.RW_EffecterDefOf.RW_LizardBubblesEast.Spawn().Trigger(lizard, TargetInfo.Invalid);
-        else if (lizard.Rotation == Rot4.South)
-            RW_Common.RW_EffecterDefOf.RW_LizardBubblesSouth.Spawn().Trigger(lizard, TargetInfo.Invalid);
-        else if (lizard.Rotation == Rot4.West)
-            RW_Common.RW_EffecterDefOf.RW_LizardBubblesWest.Spawn().Trigger(lizard, TargetInfo.Invalid);
+        var effecter = RW_Common.RW_EffecterDefOf.RW_LizardBubbles.Spawn();
+        effecter.Trigger(new TargetInfo(lizard), new TargetInfo(lizard));
     }
 }

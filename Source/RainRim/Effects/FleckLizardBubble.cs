@@ -27,10 +27,12 @@ public struct FleckLizardBubble : IFleck
     {
         var angleRad = creationData.velocityAngle * Mathf.Deg2Rad;
         var spawnPos = creationData.spawnPosition;
+        var extraVelocity = Vector3.zero;
         if (creationData.link is { Linked: true, Target: { HasThing: true, Thing: Pawn lizard } })
         {
             SourceMoodHandler = lizard.GetComp<ThingComp_LizardMoodHandler>();
-            spawnPos = EffectUtils.GetHeadOffset(lizard);
+            spawnPos = creationData.spawnPosition + EffectUtils.GetHeadOffset(lizard);
+            extraVelocity = lizard.Drawer.tweener.LastTickTweenedVelocity;
         }
         
         Def = creationData.def;
@@ -39,8 +41,8 @@ public struct FleckLizardBubble : IFleck
         Lifetime = 0.5f + 5f * Random.value * Random.value * Random.value * Random.value;
         TurnStopwatch = 0f;
         Position = spawnPos;
-        Velocity = creationData.velocity 
-                   ?? new Vector3(Mathf.Cos(angleRad), 0f, Mathf.Sin(angleRad)) * creationData.velocitySpeed;
+        Velocity = new Vector3(Mathf.Cos(angleRad), 0f, Mathf.Sin(angleRad)) * creationData.velocitySpeed 
+                   + extraVelocity;
         ScaleFactor = 0.5f;
         Scale = new Vector3(creationData.scale, creationData.scale, creationData.scale);
         SetupTick = Find.TickManager.TicksGame;

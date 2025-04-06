@@ -40,6 +40,8 @@ public class ThingComp_LizardMoodHandler : ThingComp, ILocalArmorCallback
         _nodesByTag = (Dictionary<PawnRenderNodeTagDef, PawnRenderNode>)PawnRenderTree_NodesByTag_Info
             .GetValue(ParentPawn.Drawer.renderer.renderTree);
         _colorComp = ParentPawn.GetComp<ThingComp_RandomColorPicker>();
+
+        LastHeadColor = _colorComp.Color;
     }
 
     public override void CompTick()
@@ -68,6 +70,9 @@ public class ThingComp_LizardMoodHandler : ThingComp, ILocalArmorCallback
 
     public override void PostDraw()
     {
+        if (RW_Mod.Settings.RainbowMode)
+            LastHeadColor = _colorComp.RainbowColor;
+        
         if (_graphicsUpToDate) return;
         
         var headNode = HeadNode;
@@ -83,7 +88,7 @@ public class ThingComp_LizardMoodHandler : ThingComp, ILocalArmorCallback
 
         LastHeadColor = RW_Mod.Settings.RainbowMode
             ? _colorComp.RainbowColor
-            : Color.Lerp(Color.Lerp(_colorComp.Color, Color.black, colorFlashFactor), Color.white, 
+            : Color.Lerp(Color.Lerp(Color.black, _colorComp.Color, colorFlashFactor), Color.white, 
                 whiteFlashFactor);
     }
 
@@ -111,6 +116,7 @@ public class ThingComp_LizardMoodHandler : ThingComp, ILocalArmorCallback
 
         Scribe_Deep.Look(ref WhiteFlashAnimator, nameof(WhiteFlashAnimator));
         Scribe_Deep.Look(ref ColorFlashAnimator, nameof(ColorFlashAnimator));
+        Scribe_Values.Look(ref LastHeadColor, nameof(LastHeadColor));
     }
 }
 

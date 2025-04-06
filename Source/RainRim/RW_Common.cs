@@ -80,9 +80,6 @@ public static class RW_Common
             DefOfHelper.EnsureInitializedInCtor(typeof(RW_EffecterDefOf));
         }
 
-        public static EffecterDef RW_LizardBubblesNorth;
-        public static EffecterDef RW_LizardBubblesEast;
-        public static EffecterDef RW_LizardBubblesSouth;
-        public static EffecterDef RW_LizardBubblesWest;
+        public static EffecterDef RW_LizardBubbles;
     }
 }
