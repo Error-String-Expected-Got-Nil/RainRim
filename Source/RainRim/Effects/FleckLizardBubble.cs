@@ -22,31 +22,35 @@ public struct FleckLizardBubble : IFleck
     public int SetupTick;
     public Vector3 SpawnPosition;
     public ThingComp_LizardMoodHandler SourceMoodHandler;
+    public Pawn Anchor;
     
     public void Setup(FleckCreationData creationData)
     {
-        var angleRad = creationData.velocityAngle * Mathf.Deg2Rad;
-        var spawnPos = creationData.spawnPosition;
-        var extraVelocity = Vector3.zero;
+        // Rimworld considers 0 degrees to be north and goes clockwise from there instead of counterclockwise,
+        // so we must subtract the given angle from 90 to get an angle that works for trigonometry.
+        var angleRad = (90 - creationData.velocityAngle) * Mathf.Deg2Rad;
+        var spawnPos = Vector3.zero;
         if (creationData.link is { Linked: true, Target: { HasThing: true, Thing: Pawn lizard } })
         {
             SourceMoodHandler = lizard.GetComp<ThingComp_LizardMoodHandler>();
-            spawnPos = creationData.spawnPosition + EffectUtils.GetHeadOffset(lizard);
-            extraVelocity = lizard.Drawer.tweener.LastTickTweenedVelocity;
+            spawnPos = EffectUtils.GetHeadOffset(lizard);
+            Anchor = lizard;
         }
         
         Def = creationData.def;
         Life = 1f;
         // For authenticity, this is basically how Rain World determines lizard bubble lifetime.
-        Lifetime = 0.5f + 5f * Random.value * Random.value * Random.value * Random.value;
+        Lifetime = Def.solidTime + Def.fadeOutTime * Random.value * Random.value * Random.value * Random.value;
         TurnStopwatch = 0f;
         Position = spawnPos;
-        Velocity = new Vector3(Mathf.Cos(angleRad), 0f, Mathf.Sin(angleRad)) * creationData.velocitySpeed 
-                   + extraVelocity;
+        Velocity = new Vector3(Mathf.Cos(angleRad), 0f, Mathf.Sin(angleRad)) * creationData.velocitySpeed;
         ScaleFactor = 0.5f;
         Scale = new Vector3(creationData.scale, creationData.scale, creationData.scale);
         SetupTick = Find.TickManager.TicksGame;
         SpawnPosition = creationData.spawnPosition;
+
+        // Start flecks a bit farther out so they aren't all on top of each other
+        Position += Velocity * 0.2f;
     }
 
     public bool TimeInterval(float deltaTime, Map map)
@@ -78,7 +82,7 @@ public struct FleckLizardBubble : IFleck
             alpha = 1f,
             color = SourceMoodHandler?.LastHeadColor ?? Color.black,
             drawLayer = 0,
-            pos = Position,
+            pos = (Anchor.DrawPosHeld ?? Anchor.DrawPos) + Position,
             rotation = 0f,
             scale = Scale * ScaleFactor,
             ageSecs = AgeSecs,

@@ -22,10 +22,9 @@
             <li>
                 <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
                 <spawnLocType>OnSource</spawnLocType>
-                <positionRadius>0.2</positionRadius>
                 <fleckDef>RW_LizardBubbleFleck</fleckDef>
-                <burstCount>7~12</burstCount>
-                <speed>0.55~0.75</speed>
+                <burstCount>4~8</burstCount>
+                <speed>1.0~1.5</speed>
                 <scale>0.2~0.3</scale>
                 <angle>-60~60</angle>
                 <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>

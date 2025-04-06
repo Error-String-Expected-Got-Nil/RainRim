@@ -24,7 +24,8 @@
             <color>(1, 1, 1, 1)</color>
         </graphicData>
         <altitudeLayer>MoteOverhead</altitudeLayer>
-        <solidTime>60</solidTime> <!-- Lifetime is handled in C# code -->
+        <solidTime>0.75</solidTime> <!-- Amount of time for which the bubble is guaranteed to exist -->
+        <fadeOutTime>5</fadeOutTime> <!-- Multiplied by 4 random numbers [0, 1] and added to the previous -->
         <useAttachLink>true</useAttachLink>
     </FleckDef>
 </Defs>
